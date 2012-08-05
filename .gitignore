@@ -1,0 +1,10 @@
+#vim
+*.swp
+.*.swp
+.*.sw[a-z]
+
+#OSX
+.DS_Store
+
+# Wordpress log files
+logs/
