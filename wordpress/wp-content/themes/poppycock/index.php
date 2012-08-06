@@ -1,4 +1,33 @@
 <?php get_header(); ?>
+
+			<?php // todo this should be a function call in function.php
+				// I want to do it as an action
+				// so call display_cats() in this file.
+				// then in functions php
+				//	function display_cats() {
+				//		do_action('display_cats');
+				//	}
+				//
+				//	then in bones_ahoy add an action.
+				//
+				//	add_action('display_cats', 'ppc_categories');
+				//
+				//	then define this work in ppc_categories() in functions php
+				//
+				//	I don't actually know if this is a good way to go. I could just call ppc_categories() here and have it defined to do this in functions php.
+				
+				$categories = get_categories();
+
+				$cat_ids = array();
+
+				foreach ($categories as $key => $category) {
+					$cat_ids[$key] = $category->term_id;	
+				}
+
+				$catstr = implode(',', $cat_ids);
+        ciii_term_images('category', array('term_ids' => $catstr, 'size' => 'original'));
+
+			?>
 			
 			<div id="content">
 			
