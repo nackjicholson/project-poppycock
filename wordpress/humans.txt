@@ -3,11 +3,12 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Will Vaughn -- Developer -- @eO_Ae
+    Wesley Bauman -- Writere -- @myownfalseidol
 
 # THANKS
 
-    <name>
+    Wordpress.org
 
 # TECHNOLOGY COLOPHON
 
