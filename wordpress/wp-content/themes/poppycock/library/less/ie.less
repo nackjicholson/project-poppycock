@@ -51,3 +51,16 @@ header.php file to see what they are:
 .lt-ie8 .class { ... }
 
 */
+
+/** IE specific Mixin **/
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+.lt-ie9 {
+	#logo {
+		.inline-block;
+	}
+}

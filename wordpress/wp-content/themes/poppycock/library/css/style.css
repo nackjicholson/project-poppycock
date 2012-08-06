@@ -861,7 +861,7 @@ h4,
 .h4,
 h5,
 .h5 {
-  font-family: 'ConstructivistSquare' sans-serif;
+  font-family: 'ConstructivistSquare', Georgia, sans-serif;
   text-rendering: optimizelegibility;
   font-weight: 500;
   /*
