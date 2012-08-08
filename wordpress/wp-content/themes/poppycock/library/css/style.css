@@ -861,7 +861,7 @@ h4,
 .h4,
 h5,
 .h5 {
-  font-family: 'ConstructivistSquare' sans-serif;
+  font-family: 'ConstructivistSquare', Georgia, sans-serif;
   text-rendering: optimizelegibility;
   font-weight: 500;
   /*
@@ -914,6 +914,14 @@ h5,
 /*********************
 HEADER SYTLES
 *********************/
+.header h2.ppc-description {
+  font-family: Georgia, serif;
+  font-size: 0.8em;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: .375em 0;
+  color: #111111;
+}
 /*********************
 NAVIGATION STYLES
 *********************/
