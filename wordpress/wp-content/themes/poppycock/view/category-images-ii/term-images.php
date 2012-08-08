@@ -11,9 +11,7 @@
 		</a>
 	<?php endif; ?>
 	<?php if ( $show_description ) : ?>
-		<a href="<?php echo esc_attr( get_term_link( $term[ 'id' ], $taxonomy ) ); ?>">
-			<?php echo $term['name']; ?>
-		</a>
+		<a href="<?php echo esc_attr( get_term_link( $term[ 'id' ], $taxonomy ) ); ?>"><?php echo $term['name']; ?></a>
 		<p><?php echo term_description( $term[ 'id' ], $taxonomy ); ?></p>
 	<?php endif; ?>
 	</li>
