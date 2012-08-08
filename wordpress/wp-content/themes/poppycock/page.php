@@ -52,7 +52,6 @@
 			
     				</div> <!-- end #main -->
     
-						<?php get_categories(array('exclude' => 1)); // filtered to ppc_get_categories(). ?>
 				    <?php get_sidebar(); // sidebar 1 ?>
 				    
 				</div> <!-- end #inner-content -->

@@ -10,4 +10,5 @@
 logs/
 
 # category-images-ii git can't access it
+wp-config.php
 wordpress/wp-content/uploads/
