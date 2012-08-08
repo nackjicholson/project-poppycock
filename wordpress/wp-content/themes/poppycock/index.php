@@ -1,54 +1,34 @@
 <?php get_header(); ?>
 
-			<?php // todo this should be a function call in function.php
-				// I want to do it as an action
-				// so call display_cats() in this file.
-				// then in functions php
-				//	function display_cats() {
-				//		do_action('display_cats');
-				//	}
-				//
-				//	then in bones_ahoy add an action.
-				//
-				//	add_action('display_cats', 'ppc_categories');
-				//
-				//	then define this work in ppc_categories() in functions php
-				//
-				//	I don't actually know if this is a good way to go. I could just call ppc_categories() here and have it defined to do this in functions php.
-				
-				$categories = get_categories();
-
-				$cat_ids = array();
-
-				foreach ($categories as $key => $category) {
-					$cat_ids[$key] = $category->term_id;	
-				}
-
-				$catstr = implode(',', $cat_ids);
-        ciii_term_images('category', array('term_ids' => $catstr, 'size' => 'original'));
-
-			?>
-			
 			<div id="content">
 			
 				<div id="inner-content" class="wrap clearfix">
 			
 				    <div id="main" class="eightcol first clearfix" role="main">
 
+					    <?php $postcount = 0; // for checking first post ?>
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
+
+
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 						
 						    <header class="article-header">
 							
 							    <h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 							
+							    <?php 
+							    	// Show featured image, only for 1st post
+								    if (++$postcount == 1) { 
+								    	the_post_thumbnail("full");	
+								    }
+							    ?>
+
 							    <p class="meta"><?php _e('Posted', 'bonestheme'); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time> <?php _e('by', 'bonestheme'); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e('filed under', 'bonestheme'); ?> <?php the_category(', '); ?>.</p>
 						
 						    </header> <!-- end article header -->
 					
 						    <section class="post-content clearfix">
-							    <?php the_content(); ?>
+							    <?php the_excerpt(); //the_content(); ?>
 						    </section> <!-- end article section -->
 						
 						    <footer class="article-footer">
@@ -63,6 +43,8 @@
 					
 					    <?php endwhile; ?>	
 					
+									<!-- 
+									TODO: Erase bones_page_navi stuff on the home page 
 					        <?php if (function_exists('bones_page_navi')) { // if experimental feature is active ?>
 						
 						        <?php bones_page_navi(); // use the page navi function ?>
@@ -75,6 +57,7 @@
 							        </ul>
 						        </nav>
 					        <?php } ?>		
+					      -->
 					
 					    <?php else : ?>
 					    
@@ -94,7 +77,7 @@
 			
 				    </div> <!-- end #main -->
     
-				    <?php get_sidebar(); // sidebar 1 ?>
+				    <?php get_sidebar("home"); // sidebar 1 ?>
 				    
 				</div> <!-- end #inner-content -->
     

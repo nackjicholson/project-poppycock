@@ -39,13 +39,13 @@
 			<header class="header" role="banner">
 			
 				<div id="inner-header" class="wrap clearfix">
+					<!-- if you'd like to use the site description you can un-comment it below -->
+					<h2 class='ppc-description'><?php bloginfo('description'); ?></h2>
 					
 					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
 					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
 					
-					<!-- if you'd like to use the site description you can un-comment it below -->
-					<?php // bloginfo('description'); ?>
-					
+					<div id="search_wrapper"><?php get_search_form(); ?></div>	
 					
 					<nav role="navigation">
 						<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>

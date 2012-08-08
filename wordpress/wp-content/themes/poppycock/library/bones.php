@@ -46,8 +46,14 @@ function bones_ahoy() {
     
     // cleaning up random code around images
     add_filter('the_content', 'bones_filter_ptags_on_images');
+    // TODO remove.
     // cleaning up excerpt
-    add_filter('excerpt_more', 'bones_excerpt_more');
+    //add_filter('excerpt_more', 'bones_excerpt_more');
+
+    // setting post queries
+    add_action('pre_get_posts', 'ppc_post_queries');
+    // ppc_categories hooking to get_sidebar
+    add_action('get_sidebar', 'ppc_categories');
     
 } /* end bones ahoy */
 
@@ -358,6 +364,7 @@ function bones_filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
+// TODO remove this function it isn't used.
 // This removes the annoying […] to a Read More link
 function bones_excerpt_more($more) {
 	global $post;
