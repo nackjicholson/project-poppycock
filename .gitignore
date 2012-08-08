@@ -8,3 +8,6 @@
 
 # Wordpress log files
 logs/
+
+wordpress/wp-config.php
+wordpress/wp-content/uploads/
