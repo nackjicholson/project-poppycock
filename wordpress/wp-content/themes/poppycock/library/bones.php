@@ -48,7 +48,7 @@ function bones_ahoy() {
     add_filter('the_content', 'bones_filter_ptags_on_images');
     // cleaning up excerpt. Removing -wv
     add_filter('excerpt_more', 'ppc_excerpt_more');
-    add_filter('excerpt_length', 'ppc_excerpt_length', 999);
+    add_filter('get_the_excerpt', 'ppc_the_excerpt');
 
     // setting post queries
     add_action('pre_get_posts', 'ppc_post_queries');
@@ -366,11 +366,15 @@ function bones_filter_ptags_on_images($content){
 
 // This removes the annoying […] to a Read More link
 function ppc_excerpt_more($more) {
-	return '...';
+	return '';
 }
 // Changing the excerpt length
-function ppc_excerpt_length($length) {
-	return 20;
+function ppc_the_excerpt($length) {
+	if( strlen( $length ) <= 140 ) return $length;
+	$length = substr( $length, 0, 140 );
+	$last_space = strrpos( $length, ' ' );
+	$content = substr( $length, 0, $last_space );
+	return $length;
 }
 
                   	
