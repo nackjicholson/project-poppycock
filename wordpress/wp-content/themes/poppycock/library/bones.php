@@ -46,9 +46,9 @@ function bones_ahoy() {
     
     // cleaning up random code around images
     add_filter('the_content', 'bones_filter_ptags_on_images');
-    // TODO remove.
-    // cleaning up excerpt
-    //add_filter('excerpt_more', 'bones_excerpt_more');
+    // cleaning up excerpt. Removing -wv
+    add_filter('excerpt_more', 'ppc_excerpt_more');
+    add_filter('excerpt_length', 'ppc_excerpt_length', 999);
 
     // setting post queries
     add_action('pre_get_posts', 'ppc_post_queries');
@@ -364,12 +364,13 @@ function bones_filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
-// TODO remove this function it isn't used.
 // This removes the annoying […] to a Read More link
-function bones_excerpt_more($more) {
-	global $post;
-	// edit here if you like
-	return '...  <a href="'. get_permalink($post->ID) . '" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a>';
+function ppc_excerpt_more($more) {
+	return '...';
+}
+// Changing the excerpt length
+function ppc_excerpt_length($length) {
+	return 20;
 }
 
                   	
