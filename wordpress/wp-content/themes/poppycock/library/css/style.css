@@ -549,10 +549,21 @@ TYPOGRAPHY
 	http://www.fontsquirrel.com/
 	Be sure to remove the comment brackets.
 */
+/*
 @font-face {
-  font-family: 'russianregular';
+	font-family: 'russianregular';
   src: url('../fonts/russian-webfont.eot');
-  src: url('../fonts/russian-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/russian-webfont.woff') format('woff'), url('../fonts/russian-webfont.ttf') format('truetype'), url('../fonts/russian-webfont.svg#russianregular') format('svg');
+	src: url('../fonts/russian-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/russian-webfont.woff') format('woff'),
+			 url('../fonts/russian-webfont.ttf') format('truetype'),
+			 url('../fonts/russian-webfont.svg#russianregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+*/
+@font-face {
+  font-family: 'ConstructivistSquare';
+  src: url('../fonts/constructivist-square-47694-webfont.eot');
+  src: url('../fonts/constructivist-square-47694-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/constructivist-square-47694-webfont.woff') format('woff'), url('../fonts/constructivist-square-47694-webfont.ttf') format('truetype'), url('../fonts/constructivist-square-47694-webfont.svg#ConstructivistSquare') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -769,7 +780,14 @@ style a page via class
 /* no results search page */
 /* individual paged search (i.e. body.search-paged-3) */
 /* 404 page */
-/* single post page */
+.single {
+  /* single post page */
+
+}
+.single .post {
+  margin: 0 auto;
+  border: none;
+}
 /* individual post page by id (i.e. body.postid-73) */
 /* individual paged single (i.e. body.single-paged-3) */
 /* attatchment page */
@@ -850,7 +868,7 @@ h4,
 .h4,
 h5,
 .h5 {
-  font-family: 'russianregular', Georgia, sans-serif;
+  font-family: 'ConstructivistSquare', Georgia, sans-serif;
   text-rendering: optimizelegibility;
   font-weight: 500;
   /*
@@ -903,13 +921,46 @@ h5,
 /*********************
 HEADER SYTLES
 *********************/
+.header {
+  background-color: #00de6e;
+}
+.header a,
+.header a:visited {
+  text-decoration: none;
+}
+.header a:hover,
+.header a:visited:hover,
+.header a:focus,
+.header a:visited:focus {
+  color: #444444;
+}
 .header h2.ppc-description {
   font-family: Georgia, serif;
   font-size: 0.8em;
   font-weight: normal;
   line-height: 1.2em;
-  margin: .375em 0;
+  margin: 4.667em 0 0;
   color: #111111;
+}
+.header #searchform {
+  float: right;
+  font-size: .8em;
+  margin-top: 4.267em;
+}
+.header .menu {
+  float: right;
+  font-size: 1em;
+}
+.header .menu ul {
+  margin: 1.667em 0 0;
+}
+.header .menu li {
+  font-family: "ConstructivistSquare", Georgia, serif;
+  display: inline-block;
+  margin-right: .375em;
+}
+#logo {
+  margin: 0 0 .130em;
 }
 /*********************
 NAVIGATION STYLES
@@ -964,11 +1015,15 @@ and moe scalable.
 POSTS & CONTENT STYLES
 *********************/
 #content {
-  margin-top: 2.2em;
+  margin-top: .667em;
 }
 /* end .hentry */
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
+.post {
+  width: 600px;
+  border-bottom: 1px solid #111111;
+}
 /* general post style */
 /* general article on a page style */
 /* general style on an attatchment */
@@ -1032,6 +1087,49 @@ POSTS & CONTENT STYLES
 /* image gallery styles */
 /* end .gallery */
 /* gallery caption styles */
+.train-board {
+  overflow: hidden;
+  position: relative;
+}
+.train-board .float-link {
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.train-board .train-board-title {
+  position: relative;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.train-board .post-content {
+  position: relative;
+}
+.train-board .excerpt {
+  font-size: .75em;
+  display: table;
+  height: 100%;
+  width: 450px;
+  margin-left: 3px;
+}
+.train-board .excerpt p {
+  display: table-cell;
+  vertical-align: middle;
+}
+.train-board .meta {
+  display: table;
+  float: right;
+  font-size: .9em;
+  height: 100%;
+  text-align: right;
+  width: 100px;
+  margin-right: 3px;
+}
+.train-board .meta p {
+  display: table-cell;
+  vertical-align: middle;
+}
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/

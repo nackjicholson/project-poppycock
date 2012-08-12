@@ -11,34 +11,28 @@
 
 
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+					    		<!-- featured image goes here, on the first post in loop -->
+							    <?php if (++$postcount == 1) { ?>
+						    		<a class='float-link'href="<?php the_permalink() ?>" rel="bookmark">
+							    	<?php the_post_thumbnail("full"); ?>	
+							    	</a>
+							    <? } ?>
 						
-						    <header class="article-header">
-							
-							    <h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-							
-							    <?php 
-							    	// Show featured image, only for 1st post
-								    if (++$postcount == 1) { 
-								    	the_post_thumbnail("full");	
-								    }
-							    ?>
+						    <header class="article-header train-board">
+						    	<a class='float-link'href="<?php the_permalink() ?>" rel="bookmark"></a>
 
-							    <p class="meta"><?php _e('Posted', 'bonestheme'); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time> <?php _e('by', 'bonestheme'); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e('filed under', 'bonestheme'); ?> <?php the_category(', '); ?>.</p>
-						
+								    <h1 class="h2 train-board-title"><?php the_title(); ?></h1>
+
+								    <section class="post-content clearfix">
+									    <div class="meta">
+									    	<p>
+										    	<time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time> 
+										    </p>
+									    </div>
+									    <div class="excerpt"><?php the_excerpt(); ?></div>
+								    </section> <!-- end article section -->
+
 						    </header> <!-- end article header -->
-					
-						    <section class="post-content clearfix">
-							    <?php the_excerpt(); //the_content(); ?>
-						    </section> <!-- end article section -->
-						
-						    <footer class="article-footer">
-
-    							<p class="tags"><?php the_tags('<span class="tags-title">Tags:</span> ', ', ', ''); ?></p>
-
-						    </footer> <!-- end article footer -->
-						    
-						    <?php // comments_template(); // uncomment if you want to use them ?>
-					
 					    </article> <!-- end article -->
 					
 					    <?php endwhile; ?>	

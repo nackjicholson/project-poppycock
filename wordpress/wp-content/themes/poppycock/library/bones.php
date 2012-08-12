@@ -147,6 +147,11 @@ function bones_scripts_and_styles() {
     */
     wp_enqueue_script( 'jquery' ); 
     wp_enqueue_script( 'bones-js' ); 
+
+    if (is_home()) {
+    	wp_register_script( 'ppc-train-board', get_stylesheet_directory_uri() . '/library/js/ppc-train-board.js', array('jquery'), '', true );
+    	wp_enqueue_script('ppc-train-board');
+    }
     
   }
 }
