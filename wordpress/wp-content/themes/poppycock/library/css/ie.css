@@ -74,10 +74,21 @@ TYPOGRAPHY
 	http://www.fontsquirrel.com/
 	Be sure to remove the comment brackets.
 */
+/*
 @font-face {
-  font-family: 'russianregular';
+	font-family: 'russianregular';
   src: url('../fonts/russian-webfont.eot');
-  src: url('../fonts/russian-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/russian-webfont.woff') format('woff'), url('../fonts/russian-webfont.ttf') format('truetype'), url('../fonts/russian-webfont.svg#russianregular') format('svg');
+	src: url('../fonts/russian-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/russian-webfont.woff') format('woff'),
+			 url('../fonts/russian-webfont.ttf') format('truetype'),
+			 url('../fonts/russian-webfont.svg#russianregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+*/
+@font-face {
+  font-family: 'ConstructivistSquare';
+  src: url('../fonts/constructivist-square-47694-webfont.eot');
+  src: url('../fonts/constructivist-square-47694-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/constructivist-square-47694-webfont.woff') format('woff'), url('../fonts/constructivist-square-47694-webfont.ttf') format('truetype'), url('../fonts/constructivist-square-47694-webfont.svg#ConstructivistSquare') format('svg');
   font-weight: normal;
   font-style: normal;
 }

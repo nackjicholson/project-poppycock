@@ -39,7 +39,12 @@ style a page via class
 	.search-no-results {}         /* no results search page */
 	.search-paged-1 {}            /* individual paged search (i.e. body.search-paged-3) */
 .error404 {}                      /* 404 page */
-.single {}                        /* single post page */
+.single { 											/* single post page */
+	.post {
+		margin: 0 auto;
+		border: none;
+	}
+}                        
 	.postid-1 {}                  /* individual post page by id (i.e. body.postid-73) */
 	.single-paged-1 {}            /* individual paged single (i.e. body.single-paged-3) */
 .attachment {}                    /* attatchment page */
@@ -113,7 +118,7 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-	font-family: 'russianregular', Georgia, sans-serif;
+	font-family: 'ConstructivistSquare', Georgia, sans-serif;
 	text-rendering: optimizelegibility;
 	font-weight: 500;
 	/*
@@ -159,18 +164,48 @@ HEADER SYTLES
 *********************/
 
 .header {
+	a, a:visited {
+		text-decoration: none;
+
+		&:hover, &:focus {
+			color: lighten(@black, 20%);
+		}
+	} 
+
+	background-color: @green;
 	// h2 site description
 	h2.ppc-description {
 		font-family: Georgia, serif;
 		font-size: 0.8em;
 		font-weight: normal;
 		line-height: 1.2em;
-		margin: .375em 0;
+		margin: 4.667em 0 0;
 		color: @black;
+	}
+
+	#searchform {
+		float: right;
+		font-size: .8em;
+		margin-top: 4.267em;
+	}
+	.menu {
+		float:right;
+		font-size: 1em;
+		ul {
+			margin: 1.667em 0 0;
+		}
+		li {
+			font-family: "ConstructivistSquare", Georgia, serif;
+			display: inline-block;
+			margin-right: .375em;
+		}
 	}
 }
 
-	#logo {}
+#logo {
+	margin: 0 0 .130em;
+	//line-height: 1.143em;
+}
 
 /*********************
 NAVIGATION STYLES
@@ -256,12 +291,13 @@ and moe scalable.
 } /* end .nav */
 
 
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 2.2em;
+	margin-top: .667em;
 }
 
 		.hentry {
@@ -283,7 +319,10 @@ POSTS & CONTENT STYLES
 
 		/* want to style individual post classes? Booya! */
 		.post-id {} /* post by id (i.e. post-3) */
-		.post {} /* general post style */
+		.post {
+			width: 600px;
+			border-bottom: 1px solid @black;
+		} /* general post style */
 		.page {} /* general article on a page style */
 		.attachment {} /* general style on an attatchment */
 		.sticky {} /* sticky post style */
@@ -412,6 +451,54 @@ POSTS & CONTENT STYLES
 		.size-large {}
 		.size-medium {}
 		.size-thumbnail {}
+
+		// homepage only
+		.train-board {
+			overflow: hidden;
+			position: relative;
+			.float-link {
+				position: absolute;
+				display: inline-block;
+				height: 100%;
+				width: 100%;
+				z-index: 1;
+			}
+
+			.train-board-title {
+				position: relative;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+
+			.post-content {
+				position: relative;
+			}
+
+			.excerpt {
+				font-size: .75em;
+				display: table;
+				height: 100%;
+				width: 450px;
+				margin-left: 3px;
+				p {
+					display: table-cell;
+					vertical-align: middle;
+				}
+			}
+			.meta {
+				display: table;
+				float: right;
+				font-size: .9em;
+				height: 100%;
+				text-align: right;
+				width: 100px;
+				margin-right: 3px;
+				p {
+					display: table-cell;
+					vertical-align: middle;
+				}
+			}
+		}
 
 /******************************************************************
 PAGE NAVI STYLES

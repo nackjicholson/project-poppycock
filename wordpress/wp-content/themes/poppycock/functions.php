@@ -74,6 +74,7 @@ you like. Enjoy!
 
 // Sidebars & Widgetizes Areas
 function bones_register_sidebars() {
+	/*
 	register_sidebar(array(
 		'id' => 'sidebar1',
 		'name' => 'Sidebar 1',
@@ -83,7 +84,8 @@ function bones_register_sidebars() {
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
-	
+	*/
+
 	/* 
 	to add more sidebars or widgetized areas, just copy
 	and edit the above sidebar code. In order to call 
@@ -149,7 +151,6 @@ function bones_comments($comment, $args, $depth) {
 function bones_wpsearch($form) {
 	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
 	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'.esc_attr__('Searchcock...','bonestheme').'" />
-	<input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
 	</form>';
 	return $form;
 } // don't remove this bracket!
