@@ -297,7 +297,7 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: .667em;
+	margin-top: 3em;
 }
 		
 		.hentry {
@@ -319,7 +319,9 @@ POSTS & CONTENT STYLES
 
 		.page-title {}
 
-		.archive-title { }
+		.archive-title {
+			border-bottom: 1px solid @black;
+		}
 
 		/* want to style individual post classes? Booya! */
 		.post-id {} /* post by id (i.e. post-3) */
@@ -336,7 +338,7 @@ POSTS & CONTENT STYLES
 
 		/* post meta */
 		.meta {
-			color: #999;
+			color: @grey;
 
 			time {}
 		}
@@ -492,7 +494,7 @@ POSTS & CONTENT STYLES
 			.meta {
 				display: table;
 				float: right;
-				font-size: .9em;
+				font-size: 0.889em;
 				height: 100%;
 				text-align: right;
 				width: 100px;
@@ -502,6 +504,43 @@ POSTS & CONTENT STYLES
 					vertical-align: middle;
 				}
 			}
+		}
+
+		// archive posts only
+		.archive-post {
+			.post-content {
+				color: lighten(@black, 35%);
+				font-size: 0.833em;
+				p {
+					margin: 2.133em 0 0.8em;
+				}
+			}
+			.meta {
+				font-size: 0.833em;
+				text-align: right;
+				margin: 2.133em 0 0.8em;
+				p {
+					margin: 0.250em 0;
+				}
+			}
+		}
+
+		// author page profile
+		.ppc-profile {
+			margin-bottom: 1em;
+		}
+		.ppc-social {
+			font-size: 0.889em;
+			margin: 0 1em 0 0;
+			float: right;
+			span {text-align: right;}
+			a { 
+				text-decoration: none;
+				margin-left: 1em;
+			}
+		}
+		.avatar {
+			text-align: right;
 		}
 
 /******************************************************************

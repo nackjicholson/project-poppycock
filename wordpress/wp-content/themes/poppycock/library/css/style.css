@@ -549,17 +549,13 @@ TYPOGRAPHY
 	http://www.fontsquirrel.com/
 	Be sure to remove the comment brackets.
 */
-/*
 @font-face {
-	font-family: 'russianregular';
+  font-family: 'russianregular';
   src: url('../fonts/russian-webfont.eot');
-	src: url('../fonts/russian-webfont.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/russian-webfont.woff') format('woff'),
-			 url('../fonts/russian-webfont.ttf') format('truetype'),
-			 url('../fonts/russian-webfont.svg#russianregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-*/
+  src: url('../fonts/russian-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/russian-webfont.woff') format('woff'), url('../fonts/russian-webfont.ttf') format('truetype'), url('../fonts/russian-webfont.svg#russianregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 @font-face {
   font-family: 'ConstructivistSquare';
   src: url('../fonts/constructivist-square-47694-webfont.eot');
@@ -1015,11 +1011,14 @@ and moe scalable.
 POSTS & CONTENT STYLES
 *********************/
 #content {
-  margin-top: .667em;
+  margin-top: 3em;
 }
 /* end .hentry */
 #main {
   margin-bottom: 1em;
+}
+.archive-title {
+  border-bottom: 1px solid #111111;
 }
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
@@ -1036,7 +1035,7 @@ POSTS & CONTENT STYLES
 /* style by tag (i.e. tag-news) */
 /* post meta */
 .meta {
-  color: #999;
+  color: #999999;
 }
 /* post content */
 .post-content {
@@ -1123,7 +1122,7 @@ POSTS & CONTENT STYLES
 .train-board .meta {
   display: table;
   float: right;
-  font-size: .9em;
+  font-size: 0.889em;
   height: 100%;
   text-align: right;
   width: 100px;
@@ -1132,6 +1131,39 @@ POSTS & CONTENT STYLES
 .train-board .meta p {
   display: table-cell;
   vertical-align: middle;
+}
+.archive-post .post-content {
+  color: #6a6a6a;
+  font-size: 0.833em;
+}
+.archive-post .post-content p {
+  margin: 2.133em 0 0.8em;
+}
+.archive-post .meta {
+  font-size: 0.833em;
+  text-align: right;
+  margin: 2.133em 0 0.8em;
+}
+.archive-post .meta p {
+  margin: 0.250em 0;
+}
+.ppc-profile {
+  margin-bottom: 1em;
+}
+.ppc-social {
+  font-size: 0.889em;
+  margin: 0 1em 0 0;
+  float: right;
+}
+.ppc-social span {
+  text-align: right;
+}
+.ppc-social a {
+  text-decoration: none;
+  margin-left: 1em;
+}
+.avatar {
+  text-align: right;
 }
 /******************************************************************
 PAGE NAVI STYLES
