@@ -346,7 +346,11 @@ POSTS & CONTENT STYLES
 		/* post content */
 		.post-content {
 
-			p {}
+			p {
+				float: left;
+				padding-right: 240px;
+				width: 600px;
+			}
 
 
 			ul, ol, table, dl {}
@@ -387,7 +391,7 @@ POSTS & CONTENT STYLES
 			}
 
 			img {
-				margin: 0 0 1.5em 0;
+				margin: 0 0 1em 0;
 				max-width: 100%;
 				height: auto;
 			}
@@ -484,10 +488,15 @@ POSTS & CONTENT STYLES
 				font-size: .75em;
 				display: table;
 				height: 100%;
-				width: 450px;
 				margin-left: 3px;
+				width: 450px;
 				p {
+					// These are being affected by styling on the single post p tags
+					// need to resolve that conflict, probably by nesting the single p's
 					display: table-cell;
+					float: none;
+					padding: 0;
+					width: auto;
 					vertical-align: middle;
 				}
 			}
@@ -496,11 +505,16 @@ POSTS & CONTENT STYLES
 				float: right;
 				font-size: 0.889em;
 				height: 100%;
+				margin-right: 3px;
 				text-align: right;
 				width: 100px;
-				margin-right: 3px;
 				p {
+					// These are being affected by styling on the single post p tags
+					// need to resolve that conflict, probably by nesting the single p's
 					display: table-cell;
+					float: none;
+					padding: 0;
+					width: auto;
 					vertical-align: middle;
 				}
 			}

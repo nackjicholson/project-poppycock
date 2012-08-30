@@ -314,13 +314,14 @@ POSTS & CONTENT STYLES
 }
 .post-content .alignleft,
 .post-content img.alignleft {
-  margin-right: 1.5em;
+  margin-right: 1em;
   display: inline;
   float: left;
 }
 .post-content .alignright,
 .post-content img.alignright {
-  margin-left: 1.5em;
+  margin-left: 1em;
+  margin-right: -240px;
   display: inline;
   float: right;
 }

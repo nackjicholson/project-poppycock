@@ -1047,6 +1047,11 @@ POSTS & CONTENT STYLES
 			*/
 
 }
+.post-content p {
+  float: left;
+  padding-right: 240px;
+  width: 600px;
+}
 .post-content dd {
   margin-left: 0;
   font-size: 0.9em;
@@ -1054,7 +1059,7 @@ POSTS & CONTENT STYLES
   margin-bottom: 1.5em;
 }
 .post-content img {
-  margin: 0 0 1.5em 0;
+  margin: 0 0 1em 0;
   max-width: 100%;
   height: auto;
 }
@@ -1112,11 +1117,14 @@ POSTS & CONTENT STYLES
   font-size: .75em;
   display: table;
   height: 100%;
-  width: 450px;
   margin-left: 3px;
+  width: 450px;
 }
 .train-board .excerpt p {
   display: table-cell;
+  float: none;
+  padding: 0;
+  width: auto;
   vertical-align: middle;
 }
 .train-board .meta {
@@ -1124,12 +1132,15 @@ POSTS & CONTENT STYLES
   float: right;
   font-size: 0.889em;
   height: 100%;
+  margin-right: 3px;
   text-align: right;
   width: 100px;
-  margin-right: 3px;
 }
 .train-board .meta p {
   display: table-cell;
+  float: none;
+  padding: 0;
+  width: auto;
   vertical-align: middle;
 }
 .archive-post .post-content {
@@ -1545,13 +1556,14 @@ tweeners.
   }
   .post-content .alignleft,
   .post-content img.alignleft {
-    margin-right: 1.5em;
+    margin-right: 1em;
     display: inline;
     float: left;
   }
   .post-content .alignright,
   .post-content img.alignright {
-    margin-left: 1.5em;
+    margin-left: 1em;
+    margin-right: -240px;
     display: inline;
     float: right;
   }
