@@ -8,7 +8,7 @@
 							
 				    	<?php ppc_author_profile($author); ?> 
 
- 							<h1 class="archive-title h2">Posts</h1>
+ 							<h1 class="archive-title h3">Posts</h1>
 
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

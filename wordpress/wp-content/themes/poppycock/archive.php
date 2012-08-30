@@ -18,13 +18,13 @@
 
 						    	echo $output;
 						    ?>
-						    <h1 class="archive-title h2">
+						    <h1 class="archive-title h3">
 							    <span><?php _e("", "bonestheme"); ?></span> <?php single_cat_title(); ?>
 					    	</h1>
 
 					    
 					    <?php } elseif (is_tag()) { ?> 
-						    <h1 class="archive-title h2">
+						    <h1 class="archive-title h3">
 							    <span><?php _e("Posts Tagged:", "bonestheme"); ?></span> <?php single_tag_title(); ?>
 						    </h1>
 
@@ -32,22 +32,22 @@
 					    	<?php 
 								$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 								?>
-						    <h1 class="archive-title h2">
+						    <h1 class="archive-title h3">
 						    	<?php the_author_meta('display_name', $curauth->ID ); ?>
 						    </h1>
 					    
 					    <?php } elseif (is_day()) { ?>
-						    <h1 class="archive-title h2">
+						    <h1 class="archive-title h3">
 	    						<span><?php _e("Daily Archives:", "bonestheme"); ?></span> <?php the_time('l, F j, Y'); ?>
 						    </h1>
 		
 		    			<?php } elseif (is_month()) { ?>
-			    		    <h1 class="archive-title h2">
+			    		    <h1 class="archive-title h3">
 				    	    	<span><?php _e("Monthly Archives:", "bonestheme"); ?></span> <?php the_time('F Y'); ?>
 					        </h1>
 					
 					    <?php } elseif (is_year()) { ?>
-					        <h1 class="archive-title h2">
+					        <h1 class="archive-title h3">
 					    	    <span><?php _e("Yearly Archives:", "bonestheme"); ?></span> <?php the_time('Y'); ?>
 					        </h1>
 					    <?php } ?>

@@ -1446,8 +1446,12 @@ CATEGORY LIST STYLES
 }
 .category_image {
   display: inline-block;
-  margin: 0 1em 1em 0;
-  width: 140px;
+  margin: 0 0 1em 0;
+  vertical-align: top;
+  width: 175px;
+}
+.category_image img {
+  width: 175px;
 }
 .category_image a {
   display: block;
