@@ -39,6 +39,8 @@ function bones_ahoy() {
     
     // launching this stuff after theme setup
     add_action('after_setup_theme','bones_theme_support');	
+    // adding twitter to users profile pages
+    add_filter('user_contactmethods', 'ppc_contactmethods');
     // adding sidebars to Wordpress (these are created in functions.php)
     add_action( 'widgets_init', 'bones_register_sidebars' );
     // adding the bones search form (created in functions.php)
