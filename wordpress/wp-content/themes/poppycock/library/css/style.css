@@ -780,9 +780,23 @@ style a page via class
   /* single post page */
 
 }
+.single .meta {
+  float: right;
+  width: 250px;
+}
+.single .excerpt p {
+  color: #6a6a6a;
+  margin: 0;
+  padding: 0 0 1.5em;
+}
 .single .post {
   margin: 0 auto;
   border: none;
+}
+.single .post-content p {
+  float: left;
+  padding-right: 240px;
+  width: 600px;
 }
 /* individual post page by id (i.e. body.postid-73) */
 /* individual paged single (i.e. body.single-paged-3) */
@@ -1047,11 +1061,6 @@ POSTS & CONTENT STYLES
 			*/
 
 }
-.post-content p {
-  float: left;
-  padding-right: 240px;
-  width: 600px;
-}
 .post-content dd {
   margin-left: 0;
   font-size: 0.9em;
@@ -1122,9 +1131,6 @@ POSTS & CONTENT STYLES
 }
 .train-board .excerpt p {
   display: table-cell;
-  float: none;
-  padding: 0;
-  width: auto;
   vertical-align: middle;
 }
 .train-board .meta {
@@ -1138,9 +1144,6 @@ POSTS & CONTENT STYLES
 }
 .train-board .meta p {
   display: table-cell;
-  float: none;
-  padding: 0;
-  width: auto;
   vertical-align: middle;
 }
 .archive-post .post-content {
