@@ -1,7 +1,6 @@
 <?php if (!defined ('ABSPATH')) die ('No direct access allowed'); ?>
 
 <div class="categories-list fourcol last">
-<p class="h3">Post Categories</p>
 <ul class="category_images_ii term-images taxonomy-<?php echo esc_attr( $taxonomy ); ?>">
 <?php foreach( $terms AS & $term ) { ?>
 	<li class="category_image term_image">
