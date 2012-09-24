@@ -5,52 +5,10 @@
 				<div id="inner-content" class="wrap clearfix">
 				
 				    <div id="main" class="twelvecol first clearfix" role="main">
-				
-					    <?php if (is_category()) { ?>
-						    <?php 
-						    	// TODO put this as a function
-						    	$categories = get_categories( array('orderby' => 'id', 'exclude' => '1') ); 
-						    	$output = '<ul>';
-						    	foreach($categories as $category) {
-						    		$output .= '<li><a href="' . get_category_link($category->term_id) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </li> '; 
-						    	}
-						    	$output .= '</ul>'; 
+							
+				    	<?php ppc_author_profile($author); ?> 
 
-						    	echo $output;
-						    ?>
-						    <h1 class="archive-title h3">
-							    <span><?php _e("", "bonestheme"); ?></span> <?php single_cat_title(); ?>
-					    	</h1>
-
-					    
-					    <?php } elseif (is_tag()) { ?> 
-						    <h1 class="archive-title h3">
-							    <span><?php _e("Posts Tagged:", "bonestheme"); ?></span> <?php single_tag_title(); ?>
-						    </h1>
-
-					    <?php } elseif (is_author()) { ?>
-					    	<?php 
-								$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-								?>
-						    <h1 class="archive-title h3">
-						    	<?php the_author_meta('display_name', $curauth->ID ); ?>
-						    </h1>
-					    
-					    <?php } elseif (is_day()) { ?>
-						    <h1 class="archive-title h3">
-	    						<span><?php _e("Daily Archives:", "bonestheme"); ?></span> <?php the_time('l, F j, Y'); ?>
-						    </h1>
-		
-		    			<?php } elseif (is_month()) { ?>
-			    		    <h1 class="archive-title h3">
-				    	    	<span><?php _e("Monthly Archives:", "bonestheme"); ?></span> <?php the_time('F Y'); ?>
-					        </h1>
-					
-					    <?php } elseif (is_year()) { ?>
-					        <h1 class="archive-title h3">
-					    	    <span><?php _e("Yearly Archives:", "bonestheme"); ?></span> <?php the_time('Y'); ?>
-					        </h1>
-					    <?php } ?>
+ 							<h1 class="archive-title h3">Posts</h1>
 
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

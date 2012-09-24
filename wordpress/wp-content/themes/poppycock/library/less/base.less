@@ -39,7 +39,34 @@ style a page via class
 	.search-no-results {}         /* no results search page */
 	.search-paged-1 {}            /* individual paged search (i.e. body.search-paged-3) */
 .error404 {}                      /* 404 page */
-.single {}                        /* single post page */
+
+.single { 											/* single post page */
+	.meta {
+		float: right;
+		width: 250px;
+	}
+	
+	.excerpt {
+		p {
+			color: lighten(@black, 35%);
+			margin: 0;
+			padding: 0 0 1.5em;
+		}
+	}	
+	.post {
+		margin: 0 auto;
+		border: none;
+	}
+
+	.post-content {
+		p {
+			float: left;
+			padding-right: 240px;
+			width: 600px;
+		}
+	}
+}                        
+
 	.postid-1 {}                  /* individual post page by id (i.e. body.postid-73) */
 	.single-paged-1 {}            /* individual paged single (i.e. body.single-paged-3) */
 .attachment {}                    /* attatchment page */
@@ -159,18 +186,48 @@ HEADER SYTLES
 *********************/
 
 .header {
+	a, a:visited {
+		text-decoration: none;
+
+		&:hover, &:focus {
+			color: lighten(@black, 20%);
+		}
+	} 
+
+	background-color: @green;
 	// h2 site description
 	h2.ppc-description {
 		font-family: Georgia, serif;
 		font-size: 0.8em;
 		font-weight: normal;
 		line-height: 1.2em;
-		margin: .375em 0;
+		margin: 4.667em 0 0;
 		color: @black;
+	}
+
+	#searchform {
+		float: right;
+		font-size: .8em;
+		margin-top: 4.267em;
+	}
+	.menu {
+		float:right;
+		font-size: 1em;
+		ul {
+			margin: 1.667em 0 0;
+		}
+		li {
+			font-family: "ConstructivistSquare", Georgia, serif;
+			display: inline-block;
+			margin-right: .375em;
+		}
 	}
 }
 
-	#logo {}
+#logo {
+	margin: 0 0 .130em;
+	//line-height: 1.143em;
+}
 
 /*********************
 NAVIGATION STYLES
@@ -256,14 +313,15 @@ and moe scalable.
 } /* end .nav */
 
 
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 2.2em;
+	margin-top: 3em;
 }
-
+		
 		.hentry {
 
 			header {}
@@ -272,6 +330,10 @@ POSTS & CONTENT STYLES
 
 		} /* end .hentry */
 
+		#main {
+			margin-bottom: 1em;
+		}
+
 		.single-title,
 		.page-title {}
 
@@ -279,11 +341,16 @@ POSTS & CONTENT STYLES
 
 		.page-title {}
 
-		.archive-title { }
+		.archive-title {
+			border-bottom: 1px solid @black;
+		}
 
 		/* want to style individual post classes? Booya! */
 		.post-id {} /* post by id (i.e. post-3) */
-		.post {} /* general post style */
+		.post {
+			width: 600px;
+			border-bottom: 1px solid @black;
+		} /* general post style */
 		.page {} /* general article on a page style */
 		.attachment {} /* general style on an attatchment */
 		.sticky {} /* sticky post style */
@@ -293,16 +360,13 @@ POSTS & CONTENT STYLES
 
 		/* post meta */
 		.meta {
-			color: #999;
+			color: @grey;
 
 			time {}
 		}
 
 		/* post content */
 		.post-content {
-
-			p {}
-
 
 			ul, ol, table, dl {}
 
@@ -342,7 +406,7 @@ POSTS & CONTENT STYLES
 			}
 
 			img {
-				margin: 0 0 1.5em 0;
+				margin: 0 0 1em 0;
 				max-width: 100%;
 				height: auto;
 			}
@@ -412,6 +476,91 @@ POSTS & CONTENT STYLES
 		.size-large {}
 		.size-medium {}
 		.size-thumbnail {}
+
+		// homepage only
+		.train-board {
+			overflow: hidden;
+			position: relative;
+			.float-link {
+				position: absolute;
+				display: inline-block;
+				height: 100%;
+				width: 100%;
+				z-index: 1;
+			}
+
+			.train-board-title {
+				position: relative;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+
+			.post-content {
+				position: relative;
+			}
+
+			.excerpt {
+				font-size: .75em;
+				display: table;
+				height: 100%;
+				margin-left: 3px;
+				width: 450px;
+				p {
+					display: table-cell;
+					vertical-align: middle;
+				}
+			}
+			.meta {
+				display: table;
+				float: right;
+				font-size: 0.889em;
+				height: 100%;
+				margin-right: 3px;
+				text-align: right;
+				width: 100px;
+				p {
+					display: table-cell;
+					vertical-align: middle;
+				}
+			}
+		}
+
+		// archive posts only
+		.archive-post {
+			.post-content {
+				color: lighten(@black, 35%);
+				font-size: 0.833em;
+				p {
+					margin: 2.133em 0 0.8em;
+				}
+			}
+			.meta {
+				font-size: 0.833em;
+				text-align: right;
+				margin: 2.133em 0 0.8em;
+				p {
+					margin: 0.250em 0;
+				}
+			}
+		}
+
+		// author page profile
+		.ppc-profile {
+			margin-bottom: 1em;
+		}
+		.ppc-social {
+			font-size: 0.889em;
+			margin: 0 1em 0 0;
+			float: right;
+			span {text-align: right;}
+			a { 
+				text-decoration: none;
+				margin-left: 1em;
+			}
+		}
+		.avatar {
+			text-align: right;
+		}
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -820,6 +969,40 @@ SIDEBARS & ASIDES
 		}
 
 	}
+
+/*********************
+CATEGORY LIST STYLES
+*********************/
+
+.categories-list {
+	margin-bottom: 1em;
+	.h3 {
+		border-bottom: 1px solid @black;
+		margin: 0 0 1em;
+	}
+}
+.term-images {
+	margin: 0;
+}
+.category_image {
+	display: inline-block;
+	margin: 0 0 1em 0;
+	vertical-align: top;
+	width: 175px;
+	img {width: 175px;}
+	a {display: block;}
+	p {
+		font-size: 0.75em;
+		margin: 0 0.214em;
+		line-height: 1.3;
+	}
+}
+.category_title {
+	font-family: "ConstructivistSquare", Georgia, serif;
+	text-decoration: none;
+	margin: 0.167em;
+}
+
 
 /*********************
 FOOTER STYLES

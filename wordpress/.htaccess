@@ -337,10 +337,14 @@ FileETag None
 # using the h5bp in a subdirectory, use `RewriteBase /foo` instead where 'foo'
 # is your directory.
 
+
 <IfModule mod_rewrite.c>
-  Options +FollowSymlinks
-  RewriteEngine On
-# RewriteBase /
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
 </IfModule>
 
 

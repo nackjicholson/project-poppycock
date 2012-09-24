@@ -45,6 +45,7 @@ require_once('library/custom-post-type.php'); // you can disable this if you lik
 */
 // require_once('library/translation/translation.php'); // this comes turned off by default
 
+
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
@@ -74,6 +75,7 @@ you like. Enjoy!
 
 // Sidebars & Widgetizes Areas
 function bones_register_sidebars() {
+	/*
 	register_sidebar(array(
 		'id' => 'sidebar1',
 		'name' => 'Sidebar 1',
@@ -83,7 +85,8 @@ function bones_register_sidebars() {
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
-	
+	*/
+
 	/* 
 	to add more sidebars or widgetized areas, just copy
 	and edit the above sidebar code. In order to call 
@@ -109,6 +112,57 @@ function bones_register_sidebars() {
 	
 	*/
 } // don't remove this bracket!
+
+
+/************* USER CONTACTMETHODS *********************/
+function ppc_contactmethods($array) {
+	$array['twitter_name'] = __('Twitter Name');
+	$array['twitter_url'] = __('Twitter URL');
+	$array['github_name'] = __('github Name');
+	$array['github'] = __('github URL');
+	return $array;
+}
+
+
+/************* AUTHOR PROFILE *********************/
+function ppc_author_profile($author) {
+	
+	$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+
+	$id = $curauth->ID;
+
+	// Grab the author meta info
+	$display_name = get_the_author_meta('display_name', $id);
+	$twitter_name = get_the_author_meta('twitter_name', $id);
+	$twitter_url = get_the_author_meta('twitter_url', $id);
+	$github_name = get_the_author_meta('github_name', $id);
+	$github_url = get_the_author_meta('github_url', $id);
+	$description = get_the_author_meta('description', $id);
+	$avatar = get_avatar($id, 250);
+
+	?>
+	<div class="ppc-profile twelvecol first clearfix">	
+		<div class="ppc-about ninecol first">
+			<ul class="ppc-social">
+				<?php if ((($twitter_name !== null) && (!empty($twitter_name))) || (($twitter_url !== null) && (!empty($twitter_url)))) { ?>
+					<li class="ppc-twitter">
+						<span>twitter:</span><a href="<?php echo $twitter_url; ?>"><?php echo $twitter_name; ?></a>
+					</li>
+				<?php } ?>
+				<?php if ((($github_name !== null) && (!empty($github_name))) || ( ($github_url !== null) && (!empty($github_url)))) { ?>
+					<li class="ppc-github">
+						<span>github:</span><a href="<?php echo $github_url; ?>"><?php echo $github_name; ?></a>
+					</li>
+				<?php } ?>
+			</ul>
+			<h3 class="h3"><?php echo $display_name ?></h3>
+			<p><?php echo $description; ?></p>	
+		</div>
+		<div class="avatar threecol"><?php echo $avatar; ?></div>
+	</div>
+	
+<?php 
+} // Don't remove this bracket 
 
 /************* COMMENT LAYOUT *********************/
 		
@@ -149,7 +203,6 @@ function bones_comments($comment, $args, $depth) {
 function bones_wpsearch($form) {
 	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
 	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'.esc_attr__('Searchcock...','bonestheme').'" />
-	<input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
 	</form>';
 	return $form;
 } // don't remove this bracket!

@@ -39,6 +39,8 @@ function bones_ahoy() {
     
     // launching this stuff after theme setup
     add_action('after_setup_theme','bones_theme_support');	
+    // adding twitter to users profile pages
+    add_filter('user_contactmethods', 'ppc_contactmethods');
     // adding sidebars to Wordpress (these are created in functions.php)
     add_action( 'widgets_init', 'bones_register_sidebars' );
     // adding the bones search form (created in functions.php)
@@ -46,9 +48,9 @@ function bones_ahoy() {
     
     // cleaning up random code around images
     add_filter('the_content', 'bones_filter_ptags_on_images');
-    // TODO remove.
-    // cleaning up excerpt
-    //add_filter('excerpt_more', 'bones_excerpt_more');
+    // cleaning up excerpt. Removing -wv
+    add_filter('excerpt_more', 'ppc_excerpt_more');
+    add_filter('get_the_excerpt', 'ppc_the_excerpt');
 
     // setting post queries
     add_action('pre_get_posts', 'ppc_post_queries');
@@ -147,6 +149,11 @@ function bones_scripts_and_styles() {
     */
     wp_enqueue_script( 'jquery' ); 
     wp_enqueue_script( 'bones-js' ); 
+
+    if (is_home()) {
+    	wp_register_script( 'ppc-train-board', get_stylesheet_directory_uri() . '/library/js/ppc-train-board.js', array('jquery'), '', true );
+    	wp_enqueue_script('ppc-train-board');
+    }
     
   }
 }
@@ -364,12 +371,17 @@ function bones_filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
-// TODO remove this function it isn't used.
 // This removes the annoying […] to a Read More link
-function bones_excerpt_more($more) {
-	global $post;
-	// edit here if you like
-	return '...  <a href="'. get_permalink($post->ID) . '" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a>';
+function ppc_excerpt_more($more) {
+	return '';
+}
+// Changing the excerpt length
+function ppc_the_excerpt($length) {
+	if( strlen( $length ) <= 140 ) return $length;
+	$length = substr( $length, 0, 140 );
+	$last_space = strrpos( $length, ' ' );
+	$content = substr( $length, 0, $last_space );
+	return $length;
 }
 
                   	
