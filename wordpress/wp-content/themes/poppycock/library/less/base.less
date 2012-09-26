@@ -326,7 +326,14 @@ POSTS & CONTENT STYLES
 
 			header {}
 
-			footer {}
+			footer {
+				margin-bottom: 5em;
+				.tags {
+					font-size: 0.75em;
+					line-height: 1.438em;
+					margin: 0;
+				}
+			}
 
 		} /* end .hentry */
 
@@ -696,13 +703,16 @@ COMMENT STYLES
 
 .commentlist {
 
+	width: 800px;
+	font-size: 0.75em;
+
 	li {
 		position: relative;
 		clear: both;
 		overflow: hidden;
 		list-style-type: none;
-		margin-bottom: 1.5em;
-		padding: 0.7335em 10px;
+		margin-bottom: 1em;
+		padding: 0.7335em 0 0;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -731,13 +741,13 @@ COMMENT STYLES
 	}
 
 	li.depth-1 {
+		border-top: 1px solid @black;
 		margin-left: 0;
 		margin-top: 0;
 	}
 
 	li:not(.depth-1) {
-		margin-right: -10px;
-		margin-left: -10px;
+		margin-left: 1em;
 		margin-top: 0;
 		padding-bottom: 0;
 	}
@@ -768,7 +778,9 @@ COMMENT STYLES
 
 	/* vcard */
 	.vcard {
-		margin-left: 50px;
+		float: right;
+		font-size: 1em;
+		margin-left: 1em;
 
 		cite.fn {
 			font-weight: 700;
@@ -779,7 +791,7 @@ COMMENT STYLES
 		}
 
 		time {
-			float: right;
+			display: block;
 
 			a {
 				color: #999;
@@ -821,7 +833,9 @@ COMMENT STYLES
 
 	/* comment content */
 	.comment_content {
-		margin-left: 50px;
+
+		font-size: 1em;
+		line-height: 1.438em;
 
 		p {
 			margin: 0.7335em 0 1.5em;
