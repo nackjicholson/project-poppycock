@@ -1292,8 +1292,8 @@ COMMENT STYLES
   clear: both;
   overflow: hidden;
   list-style-type: none;
-  margin-bottom: 1em;
-  padding: 0.7335em 0 0;
+  margin-bottom: 2em;
+  padding: 2em 0 0;
   /* end .commentlist li ul.children */
 
 }
@@ -1321,15 +1321,16 @@ COMMENT STYLES
   padding-bottom: 0;
 }
 .commentlist .odd {
-  background: #eee;
+  background: #fdfdfd;
 }
 .commentlist .even {
-  background: #fefefe;
+  background: #fdfdfd;
 }
 .commentlist .vcard {
   float: right;
   font-size: 1em;
   margin-left: 1em;
+  text-align: right;
 }
 .commentlist .vcard cite.fn {
   font-weight: 700;
@@ -1357,7 +1358,7 @@ COMMENT STYLES
   line-height: 1.438em;
 }
 .commentlist .comment_content p {
-  margin: 0.7335em 0 1.5em;
+  margin: 0.25em 0 1.5em;
   font-size: 1em;
   line-height: 1.5em;
 }
