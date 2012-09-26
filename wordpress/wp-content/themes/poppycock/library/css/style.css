@@ -1472,13 +1472,16 @@ CATEGORY LIST STYLES
   margin: 0;
 }
 .category_image {
-  display: inline-block;
   margin: 0 0 1em 0;
+  min-height: 80px;
   vertical-align: top;
-  width: 175px;
 }
 .category_image a {
   display: block;
+}
+.category_image .link_image {
+  float: left;
+  height: 80px;
 }
 .category_image p {
   font-size: 0.75em;
@@ -1489,6 +1492,7 @@ CATEGORY LIST STYLES
   font-family: "ConstructivistSquare", Georgia, serif;
   text-decoration: none;
   margin: 0.167em;
+  margin-top: 0;
 }
 /*********************
 FOOTER STYLES

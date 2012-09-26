@@ -5,7 +5,7 @@
 <?php foreach( $terms AS & $term ) { ?>
 	<li class="category_image term_image">
 	<?php if ( $link_images ) : ?>
-		<a href="<?php echo esc_attr( get_term_link( $term[ 'id' ], $taxonomy ) ); ?>">
+		<a class="link_image" href="<?php echo esc_attr( get_term_link( $term[ 'id' ], $taxonomy ) ); ?>">
 	<?php endif; ?>
 			<img src="<?php echo $term[ 'image' ]; ?>" alt="<?php echo $term[ 'name' ]; ?>" />
 	<?php if ( $link_images ) : ?>
