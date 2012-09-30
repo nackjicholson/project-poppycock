@@ -22,7 +22,7 @@ The comments page for Bones
 	
 	<h3 id="comments" class="h2"><?php comments_number('<span>No</span> Responses', '<span>One</span> Response', '<span>%</span> Responses' );?> <!-- to &#8220;<?php the_title(); ?>&#8221;--></h3>
 
-	<nav id="comment-nav">
+	<nav class="comment-nav">
 		<ul class="clearfix">
 	  		<li><?php previous_comments_link() ?></li>
 	  		<li><?php next_comments_link() ?></li>
@@ -33,7 +33,7 @@ The comments page for Bones
 		<?php wp_list_comments('type=comment&callback=bones_comments'); ?>
 	</ol>
 	
-	<nav id="comment-nav">
+	<nav class="comment-nav">
 		<ul class="clearfix">
 	  		<li><?php previous_comments_link() ?></li>
 	  		<li><?php next_comments_link() ?></li>
@@ -81,12 +81,12 @@ The comments page for Bones
 	
 	<ul id="comment-form-elements" class="clearfix">
 		
-		<li>
+		<li class="author">
 		  <label for="author"><?php _e("Name", "bonestheme"); ?> <?php if ($req) echo "(required)"; ?></label>
 		  <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e('Your Name*', 'bonestheme'); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
 		</li>
 		
-		<li>
+		<li class="email">
 		  <label for="email"><?php _e("Mail", "bonestheme"); ?> <?php if ($req) echo "(required)"; ?></label>
 		  <input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e('Your E-Mail*', 'bonestheme'); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
 		  <small><?php _e("(will not be published)", "bonestheme"); ?></small>
@@ -101,16 +101,16 @@ The comments page for Bones
 
 	<?php endif; ?>
 	
-	<p><textarea name="comment" id="comment" placeholder="<?php _e('Your Comment here...', 'bonestheme'); ?>" tabindex="4"></textarea></p>
+	<p><textarea name="comment" id="comment" placeholder="<?php _e('Go ahead, say something...', 'bonestheme'); ?>" tabindex="4"></textarea></p>
 	
 	<p>
 	  <input name="submit" type="submit" id="submit" class="button" tabindex="5" value="<?php _e('Submit', 'bonestheme'); ?>" />
 	  <?php comment_id_fields(); ?>
 	</p>
 	
-	<div class="alert info">
+	<!-- <div class="alert info">
 		<p id="allowed_tags" class="small"><strong>XHTML:</strong> <?php _e('You can use these tags', 'bonestheme'); ?>: <code><?php echo allowed_tags(); ?></code></p>
-	</div>
+	</div> -->
 	
 	<?php do_action('comment_form', $post->ID); ?>
 	

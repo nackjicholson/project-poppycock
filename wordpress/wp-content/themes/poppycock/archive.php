@@ -10,17 +10,19 @@
 						    <?php 
 						    	// TODO put this as a function
 						    	$categories = get_categories( array('orderby' => 'id', 'exclude' => '1') ); 
-						    	$output = '<ul>';
+						    	$output = '<ul class="category-menu">';
 						    	foreach($categories as $category) {
-						    		$output .= '<li><a href="' . get_category_link($category->term_id) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </li> '; 
+						    		$activeClass = "";
+						    		if (is_category($category->term_id)) $activeClass = " active";
+						    		$output .= '<li><a class="category_title' . $activeClass . '" href="' . get_category_link($category->term_id) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </li> '; 
 						    	}
 						    	$output .= '</ul>'; 
 
 						    	echo $output;
 						    ?>
-						    <h1 class="archive-title h3">
+						    <!--<h1 class="archive-title h3">
 							    <span><?php _e("", "bonestheme"); ?></span> <?php single_cat_title(); ?>
-					    	</h1>
+					    	</h1>-->
 
 					    
 					    <?php } elseif (is_tag()) { ?> 

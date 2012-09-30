@@ -31,7 +31,26 @@ style a page via class
 .rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
 .home {}                          /* home page */
 .blog {}                          /* blog template page */
-.archive {}                       /* archive page */
+.archive {
+	#content {
+	.category-menu {
+		li {
+			display: inline-block;
+			margin-right: 1em;
+		}
+		.category_title {
+			display: inline-block;
+			font-size: 1.443em;
+			line-height: 1.625;
+			text-align: center;
+			width: 100%;
+		}
+		.active, .active:visited {
+			background-color: lighten(@grey, 25%);
+		}
+	}
+	}
+}                       /* archive page */
 .date {}                          /* date archive page */
 	.date-paged-1 {}              /* replace the number to the corresponding page number */
 .search {}                        /* search page */
@@ -242,17 +261,17 @@ and moe scalable.
 */
 
 .nav {
-	border: 1px solid #ccc;
-	border-bottom: 0;
+	//border: 1px solid #ccc;
+	//border-bottom: 0;
 
 	li {
 
 		a {
 			display: block;
 			text-decoration: none;
-			padding: 10px 10px;
-			background-color: #eee;
-			border-bottom: 1px solid #ccc;
+			//padding: 10px 10px;
+			//background-color: #eee;
+			//border-bottom: 1px solid #ccc;
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -312,6 +331,37 @@ and moe scalable.
 
 } /* end .nav */
 
+.footer-nav {
+	margin: 0;
+	.menu-item {
+		margin: 0.5em 1.625em;
+		a {
+			height: 48px;
+			overflow: hidden;
+			text-indent: -9999px;
+			white-space: nowrap;
+			width: 48px;
+		}			
+	}
+
+	// these may have to change in production
+	.fb-icon { 
+		a {
+			background: url("../images/facebook.png") no-repeat; 
+		}
+	}
+	.tw-icon { 
+		a {
+			background: url("../images/twitter.png") no-repeat; 
+		}
+	}
+	.gh-icon { 
+		a {
+			background: url("../images/github.png") no-repeat; 
+		}
+	}
+}
+
 
 
 /*********************
@@ -327,7 +377,7 @@ POSTS & CONTENT STYLES
 			header {}
 
 			footer {
-				margin-bottom: 5em;
+				margin-bottom: 3em;
 				.tags {
 					font-size: 0.75em;
 					line-height: 1.438em;
@@ -338,7 +388,7 @@ POSTS & CONTENT STYLES
 		} /* end .hentry */
 
 		#main {
-			margin-bottom: 1em;
+			margin-bottom: 3em;
 		}
 
 		.single-title,
@@ -695,7 +745,14 @@ COMMENT STYLES
 
 	ul {
 
-		li {}
+		li {
+			a, a:visited {
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+
+			}
+		}
 
 	}
 }
@@ -839,7 +896,7 @@ COMMENT STYLES
 		line-height: 1.438em;
 
 		p {
-			margin: 0.25em 0 1.5em;
+			margin: 0.25em 0.5em 1.5em;
 			font-size: 1em;
 			line-height: 1.5em;
 		}
@@ -872,16 +929,22 @@ COMMENT FORM STYLES
 ******************************************************************/
 
 .respond-form {
-	margin: 1.5em 10px;
-	padding-bottom: 2.2em;
+	margin: 1.5em 0;
+	width: 800px;
 
 	form {
 		margin: 0.75em 0;
 
+		#comment-form-elements {
+			.author, .email {
+				display: inline-block;
+				margin-right: 1em;
+				margin-bottom: 0.7335em;
+			}
+		}
 		li {
 			list-style-type: none;
 			clear: both;
-			margin-bottom: 0.7335em;
 
 			label,
 			small {
@@ -893,13 +956,14 @@ COMMENT FORM STYLES
 		input[type=email],
 		input[type=url],
 		textarea {
+			color: @black;
+			background: @white;
 			padding: 3px 6px;
-			background: #efefef;
-			border: 2px solid #cecece;
+			border: 2px solid @grey;
 			line-height: 1.5em;
 
 			&:focus {
-				background: #fff;
+				background: @white;
 			}
 
 			/* form validation */
@@ -917,13 +981,12 @@ COMMENT FORM STYLES
 		input[type=text],
 		input[type=email],
 		input[type=url] {
-			max-width: 400px;
-			min-width: 250px;
+			width: 100%;
 		}
 
 		textarea {
 			resize: none;
-			width: 97.3%;
+			width: 100%;
 			height: 150px;
 		}
 
@@ -1032,8 +1095,65 @@ FOOTER STYLES
 *********************/
 
 .footer {
+	background: @green;
 	clear: both;
+	nav {
+		display: inline-block;
+		float: left;
+		width: 380px;
+	}
+	.footer-nav-pages {
+		.h3 {
+			font-size: 1.438em;
+			margin-bottom: 0;
+		}
+		.menu {
+			font-size: 0.75em;
+			ul {
+				margin: 0;
+			}
+			li {
+				font-family: "ConstructivistSquare", Georgia, serif;
+				display: inline-block;
+				margin-right: .375em;
+			}
+		}
+
+		.attribution {
+			margin: 0;
+			font-size: 0.688em;
+		}
+	}
+
+	.footer-nav-social {
+		border-left: 1px solid @black;
+		border-right: 1px solid @black;
+		text-align: center;
+		margin: 1em 1em 0;
+		width: 330px;
+	}
+
+	.footer-nav-cats {
+		.category-menu {
+			li {
+				display: inline-block;
+				float: left;
+				width: 33%;
+			}
+			.category_title {
+				font-size: 0.75em;
+			}
+		}
+	}
+	a, a:visited {
+		text-decoration: none;
+
+		&:hover, &:focus {
+			color: lighten(@black, 20%);
+		}
+	} 
 }
+
 
 	/*
 	if you checked out the link above:

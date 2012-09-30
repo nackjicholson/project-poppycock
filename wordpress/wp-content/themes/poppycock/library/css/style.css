@@ -646,13 +646,13 @@ BUTTONS
 *********************/
 .button,
 .button:visited {
-  border: 1px solid #be0d37;
-  border-top-color: #db0f3f;
-  border-left-color: #db0f3f;
+  border: 1px solid #191919;
+  border-top-color: #191919;
+  border-left-color: #191919;
   padding: 4px 12px;
   color: #fdfdfd;
   display: inline-block;
-  font-size: 11px;
+  font-size: 0.75em;
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.75);
@@ -667,36 +667,36 @@ BUTTONS
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background-color: #e40f42;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f01d4f), to(#e40f42));
-  background-image: -webkit-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: -moz-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: -o-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: linear-gradient(to bottom, #f01d4f, #e40f42);
+  background-color: #333333;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8c8c8c), to(#333333));
+  background-image: -webkit-linear-gradient(top, #8c8c8c, #333333);
+  background-image: -moz-linear-gradient(top, #8c8c8c, #333333);
+  background-image: -o-linear-gradient(top, #8c8c8c, #333333);
+  background-image: linear-gradient(to bottom, #8c8c8c, #333333);
 }
 .button:hover,
 .button:visited:hover,
 .button:focus,
 .button:visited:focus {
   color: #fdfdfd;
-  border: 1px solid #be0d37;
-  border-top-color: #9d0a2d;
-  border-left-color: #9d0a2d;
-  background-color: #cc0e3b;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#cc0e3b));
-  background-image: -webkit-linear-gradient(top, #e40f42, #cc0e3b);
-  background-image: -moz-linear-gradient(top, #e40f42, #cc0e3b);
-  background-image: -o-linear-gradient(top, #e40f42, #cc0e3b);
-  background-image: linear-gradient(to bottom, #e40f42, #cc0e3b);
+  border: 1px solid #333333;
+  border-top-color: #333333;
+  border-left-color: #333333;
+  background-color: #595959;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#999999), to(#595959));
+  background-image: -webkit-linear-gradient(top, #999999, #595959);
+  background-image: -moz-linear-gradient(top, #999999, #595959);
+  background-image: -o-linear-gradient(top, #999999, #595959);
+  background-image: linear-gradient(to bottom, #999999, #595959);
 }
 .button:active,
 .button:visited:active {
-  background-color: #f01d4f;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#f01d4f));
-  background-image: -webkit-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: -moz-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: -o-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: linear-gradient(to bottom, #e40f42, #f01d4f);
+  background-color: #999999;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#999999));
+  background-image: -webkit-linear-gradient(top, #595959, #999999);
+  background-image: -moz-linear-gradient(top, #595959, #999999);
+  background-image: -o-linear-gradient(top, #595959, #999999);
+  background-image: linear-gradient(to bottom, #595959, #999999);
 }
 .blue-button,
 .blue-button:visited {
@@ -768,6 +768,21 @@ style a page via class
 /* for sites that are read right to left (i.e. hebrew) */
 /* home page */
 /* blog template page */
+.archive #content .category-menu li {
+  display: inline-block;
+  margin-right: 1em;
+}
+.archive #content .category-menu .category_title {
+  display: inline-block;
+  font-size: 1.443em;
+  line-height: 1.625;
+  text-align: center;
+  width: 100%;
+}
+.archive #content .category-menu .active,
+.archive #content .category-menu .active:visited {
+  background-color: #d9d9d9;
+}
 /* archive page */
 /* date archive page */
 /* replace the number to the corresponding page number */
@@ -983,8 +998,6 @@ the navs on the site and our css is cleaner
 and moe scalable.
 */
 .nav {
-  border: 1px solid #ccc;
-  border-bottom: 0;
   /* end .menu li */
 
   /* highlight current page */
@@ -1005,9 +1018,6 @@ and moe scalable.
 .nav li a {
   display: block;
   text-decoration: none;
-  padding: 10px 10px;
-  background-color: #eee;
-  border-bottom: 1px solid #ccc;
   /*
 			remember this is for mobile ONLY, so there's no need
 			to even declare hover styles here, you can do it in
@@ -1021,6 +1031,28 @@ and moe scalable.
   padding-left: 30px;
 }
 /* end .nav */
+.footer-nav {
+  margin: 0;
+}
+.footer-nav .menu-item {
+  margin: 0.5em 1.625em;
+}
+.footer-nav .menu-item a {
+  height: 48px;
+  overflow: hidden;
+  text-indent: -9999px;
+  white-space: nowrap;
+  width: 48px;
+}
+.footer-nav .fb-icon a {
+  background: url("../images/facebook.png") no-repeat;
+}
+.footer-nav .tw-icon a {
+  background: url("../images/twitter.png") no-repeat;
+}
+.footer-nav .gh-icon a {
+  background: url("../images/github.png") no-repeat;
+}
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -1028,7 +1060,7 @@ POSTS & CONTENT STYLES
   margin-top: 3em;
 }
 .hentry footer {
-  margin-bottom: 5em;
+  margin-bottom: 3em;
 }
 .hentry footer .tags {
   font-size: 0.75em;
@@ -1037,7 +1069,7 @@ POSTS & CONTENT STYLES
 }
 /* end .hentry */
 #main {
-  margin-bottom: 1em;
+  margin-bottom: 3em;
 }
 .archive-title {
   border-bottom: 1px solid #111111;
@@ -1267,6 +1299,10 @@ COMMENT STYLES
   /* number of comments span */
 
 }
+.comment-nav ul li a,
+.comment-nav ul li a:visited {
+  text-decoration: none;
+}
 .commentlist {
   width: 800px;
   font-size: 0.75em;
@@ -1358,7 +1394,7 @@ COMMENT STYLES
   line-height: 1.438em;
 }
 .commentlist .comment_content p {
-  margin: 0.25em 0 1.5em;
+  margin: 0.25em 0.5em 1.5em;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -1382,16 +1418,21 @@ COMMENT STYLES
 COMMENT FORM STYLES
 ******************************************************************/
 .respond-form {
-  margin: 1.5em 10px;
-  padding-bottom: 2.2em;
+  margin: 1.5em 0;
+  width: 800px;
 }
 .respond-form form {
   margin: 0.75em 0;
 }
+.respond-form form #comment-form-elements .author,
+.respond-form form #comment-form-elements .email {
+  display: inline-block;
+  margin-right: 1em;
+  margin-bottom: 0.7335em;
+}
 .respond-form form li {
   list-style-type: none;
   clear: both;
-  margin-bottom: 0.7335em;
 }
 .respond-form form li label,
 .respond-form form li small {
@@ -1401,9 +1442,10 @@ COMMENT FORM STYLES
 .respond-form form input[type=email],
 .respond-form form input[type=url],
 .respond-form form textarea {
+  color: #111111;
+  background: #fdfdfd;
   padding: 3px 6px;
-  background: #efefef;
-  border: 2px solid #cecece;
+  border: 2px solid #999999;
   line-height: 1.5em;
   /* form validation */
 
@@ -1412,7 +1454,7 @@ COMMENT FORM STYLES
 .respond-form form input[type=email]:focus,
 .respond-form form input[type=url]:focus,
 .respond-form form textarea:focus {
-  background: #fff;
+  background: #fdfdfd;
 }
 .respond-form form input[type=text]:invalid,
 .respond-form form input[type=email]:invalid,
@@ -1429,12 +1471,11 @@ COMMENT FORM STYLES
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url] {
-  max-width: 400px;
-  min-width: 250px;
+  width: 100%;
 }
 .respond-form form textarea {
   resize: none;
-  width: 97.3%;
+  width: 100%;
   height: 150px;
 }
 /* comment submit button */
@@ -1503,7 +1544,57 @@ CATEGORY LIST STYLES
 FOOTER STYLES
 *********************/
 .footer {
+  background: #00de6e;
   clear: both;
+}
+.footer nav {
+  display: inline-block;
+  float: left;
+  width: 380px;
+}
+.footer .footer-nav-pages .h3 {
+  font-size: 1.438em;
+  margin-bottom: 0;
+}
+.footer .footer-nav-pages .menu {
+  font-size: 0.75em;
+}
+.footer .footer-nav-pages .menu ul {
+  margin: 0;
+}
+.footer .footer-nav-pages .menu li {
+  font-family: "ConstructivistSquare", Georgia, serif;
+  display: inline-block;
+  margin-right: .375em;
+}
+.footer .footer-nav-pages .attribution {
+  margin: 0;
+  font-size: 0.688em;
+}
+.footer .footer-nav-social {
+  border-left: 1px solid #111111;
+  border-right: 1px solid #111111;
+  text-align: center;
+  margin: 1em 1em 0;
+  width: 330px;
+}
+.footer .footer-nav-cats .category-menu li {
+  display: inline-block;
+  float: left;
+  width: 33%;
+}
+.footer .footer-nav-cats .category-menu .category_title {
+  font-size: 0.75em;
+}
+.footer a,
+.footer a:visited {
+  text-decoration: none;
+}
+.footer a:hover,
+.footer a:visited:hover,
+.footer a:focus,
+.footer a:visited:focus {
+  color: #444444;
 }
 /*
 	if you checked out the link above:
@@ -1756,8 +1847,6 @@ you can add resource intensive styles.
   NAVIGATION STYLES
   *********************/
   .nav {
-    background: #eee;
-    border: 0;
     /* end .menu ul li */
   
     /* highlight current page */
@@ -1782,10 +1871,6 @@ you can add resource intensive styles.
   			has the possibility of being a mobile device.
   			*/
   
-  }
-  .nav li a:hover,
-  .nav li a:focus {
-    background-color: #dedede;
   }
   .nav li ul.sub-menu,
   .nav li ul.children {
