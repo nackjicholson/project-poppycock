@@ -828,6 +828,9 @@ style a page via class
 /* individual tag page (i.e. body.tag-news) */
 /* replace the number to the corresponding page number */
 /* custom page template page */
+.page-template-page-writers-php #content {
+  min-height: 480px;
+}
 /* individual page template (i.e. body.page-template-contact-php */
 /* replace the number to the corresponding page number */
 /* parent page template */
@@ -982,7 +985,7 @@ HEADER SYTLES
 .header .menu li {
   font-family: "ConstructivistSquare", Georgia, serif;
   display: inline-block;
-  margin-right: .375em;
+  margin-right: 1em;
 }
 #logo {
   margin: 0 0 .130em;
@@ -1541,6 +1544,25 @@ CATEGORY LIST STYLES
   margin: 0.167em;
 }
 /*********************
+WRITERS LIST STYLES
+*********************/
+.writers-list {
+  margin: 0;
+}
+.writers-list li {
+  border-bottom: 1px solid #111111;
+  font-family: 'ConstructivistSquare', Georgia, sans-serif;
+  text-rendering: optimizelegibility;
+  font-weight: 500;
+  font-size: 1.75em;
+  line-height: 2em;
+  margin-bottom: 0.375em;
+}
+.writers-list a,
+.writers-list a:visited {
+  text-decoration: none;
+}
+/*********************
 FOOTER STYLES
 *********************/
 .footer {
@@ -1565,7 +1587,7 @@ FOOTER STYLES
 .footer .footer-nav-pages .menu li {
   font-family: "ConstructivistSquare", Georgia, serif;
   display: inline-block;
-  margin-right: .375em;
+  margin-right: 1em;
 }
 .footer .footer-nav-pages .attribution {
   margin: 0;
