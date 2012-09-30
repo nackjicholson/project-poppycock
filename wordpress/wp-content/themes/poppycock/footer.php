@@ -7,7 +7,7 @@
 	        </nav>-->
 
 	        <nav role="navigation" class="footer-nav-pages">
-	        	<h1 class="h3"><a href="<?php echo home_url(); ?> rel="nofollow"><?php bloginfo('name'); ?></a></h3>
+	        	<h1 class="h3"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h3>
 						<?php bones_main_nav(); ?>
 						<p class="attribution">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
 	        </nav>
