@@ -768,9 +768,6 @@ style a page via class
 /* for sites that are read right to left (i.e. hebrew) */
 /* home page */
 /* blog template page */
-.archive #content {
-  min-height: 470px;
-}
 .archive #content .category-menu li {
   display: inline-block;
   margin-right: 1em;
@@ -1060,6 +1057,7 @@ and moe scalable.
 POSTS & CONTENT STYLES
 *********************/
 #content {
+  min-height: 470px;
   margin-top: 3em;
 }
 .hentry footer {
