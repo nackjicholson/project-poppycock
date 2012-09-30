@@ -768,6 +768,9 @@ style a page via class
 /* for sites that are read right to left (i.e. hebrew) */
 /* home page */
 /* blog template page */
+.archive #content {
+  min-height: 470px;
+}
 .archive #content .category-menu li {
   display: inline-block;
   margin-right: 1em;
@@ -828,9 +831,6 @@ style a page via class
 /* individual tag page (i.e. body.tag-news) */
 /* replace the number to the corresponding page number */
 /* custom page template page */
-.page-template-page-writers-php #content {
-  min-height: 480px;
-}
 /* individual page template (i.e. body.page-template-contact-php */
 /* replace the number to the corresponding page number */
 /* parent page template */
