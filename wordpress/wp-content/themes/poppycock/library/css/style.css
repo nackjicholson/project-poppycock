@@ -171,7 +171,7 @@ mark {
  */
 p,
 pre {
-  margin: 1em 0;
+  margin: 2em 0;
 }
 /*
  * Corrects font family set oddly in IE6, S4/5, Chrome.
@@ -809,7 +809,6 @@ style a page via class
   border: none;
 }
 .single .post-content p {
-  float: left;
   padding-right: 240px;
   width: 600px;
 }
@@ -1120,9 +1119,7 @@ POSTS & CONTENT STYLES
 }
 .post-content pre,
 .post-content code {
-  background: #eee;
-  border: 1px solid #cecece;
-  padding: 10px;
+  font-size: 0.875em;
 }
 /* end .post-content */
 .wp-caption {
