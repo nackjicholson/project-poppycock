@@ -8,6 +8,7 @@
 
 # Wordpress log files
 logs/
+database/
 
 # category-images-ii git can't access it
 wordpress/wp-config.php
