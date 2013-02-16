@@ -245,13 +245,13 @@ BUTTONS
 *********************/
 
 .button, .button:visited {
-	border: 1px solid darken(@bones-pink, 13%);
-	border-top-color: darken(@bones-pink, 7%);
-	border-left-color: darken(@bones-pink, 7%);
+	border: 1px solid darken(@grey, 50%);
+	border-top-color: darken(@grey, 50%);
+	border-left-color: darken(@grey, 50%);
 	padding: 4px 12px;
 	color: @white;
 	display: inline-block;
-	font-size: 11px;
+	font-size: 0.75em;
 	font-weight: bold;
 	text-decoration: none;
 	text-shadow: 0 1px rgba(0,0,0, .75);
@@ -260,18 +260,18 @@ BUTTONS
 	line-height: 21px;
 	.transition();
 	.rounded(4px);
-	.css-gradient(@bones-pink,darken(@bones-pink, 5%));
+	.css-gradient(darken(@grey, 5%),darken(@grey, 40%));
 
 	&:hover, &:focus {
 		color: @white;
-	  	border: 1px solid darken(@bones-pink, 13%);
-	  	border-top-color: darken(@bones-pink, 20%);
-	 	border-left-color: darken(@bones-pink, 20%);
-		.css-gradient(darken(@bones-pink, 5%),darken(@bones-pink, 10%));
+  	border: 1px solid darken(@grey, 40%);
+  	border-top-color: darken(@grey, 40%);
+ 		border-left-color: darken(@grey, 40%);
+		.css-gradient(@grey,darken(@grey, 25%));
 	}
 	
 	&:active {
-		.css-gradient(darken(@bones-pink, 5%),@bones-pink);
+		.css-gradient(darken(@grey, 25%),@grey);
 	}	
 }
 

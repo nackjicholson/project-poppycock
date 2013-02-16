@@ -31,7 +31,26 @@ style a page via class
 .rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
 .home {}                          /* home page */
 .blog {}                          /* blog template page */
-.archive {}                       /* archive page */
+.archive {
+	#content {
+	.category-menu {
+		li {
+			display: inline-block;
+			margin-right: 1em;
+		}
+		.category_title {
+			display: inline-block;
+			font-size: 1.443em;
+			line-height: 1.625;
+			text-align: center;
+			width: 100%;
+		}
+		.active, .active:visited {
+			background-color: lighten(@grey, 25%);
+		}
+	}
+	}
+}                       /* archive page */
 .date {}                          /* date archive page */
 	.date-paged-1 {}              /* replace the number to the corresponding page number */
 .search {}                        /* search page */
@@ -60,7 +79,6 @@ style a page via class
 
 	.post-content {
 		p {
-			float: left;
 			padding-right: 240px;
 			width: 600px;
 		}
@@ -82,7 +100,7 @@ style a page via class
 	.tag-slug {}                  /* individual tag page (i.e. body.tag-news) */
 	.tag-paged-1 {}               /* replace the number to the corresponding page number */
 .page-template {}                 /* custom page template page */
-	.page-template-page-php {}    /* individual page template (i.e. body.page-template-contact-php */
+	.page-template-page-writers-php {}    /* individual page template (i.e. body.page-template-contact-php */
 	.page-paged-1 {}              /* replace the number to the corresponding page number */
 	.page-parent {}               /* parent page template */
 	.page-child {}                /* child page template */
@@ -219,7 +237,7 @@ HEADER SYTLES
 		li {
 			font-family: "ConstructivistSquare", Georgia, serif;
 			display: inline-block;
-			margin-right: .375em;
+			margin-right: 1em;
 		}
 	}
 }
@@ -242,17 +260,17 @@ and moe scalable.
 */
 
 .nav {
-	border: 1px solid #ccc;
-	border-bottom: 0;
+	//border: 1px solid #ccc;
+	//border-bottom: 0;
 
 	li {
 
 		a {
 			display: block;
 			text-decoration: none;
-			padding: 10px 10px;
-			background-color: #eee;
-			border-bottom: 1px solid #ccc;
+			//padding: 10px 10px;
+			//background-color: #eee;
+			//border-bottom: 1px solid #ccc;
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -312,6 +330,37 @@ and moe scalable.
 
 } /* end .nav */
 
+.footer-nav {
+	margin: 0;
+	.menu-item {
+		margin: 0.5em 1.625em;
+		a {
+			height: 48px;
+			overflow: hidden;
+			text-indent: -9999px;
+			white-space: nowrap;
+			width: 48px;
+		}			
+	}
+
+	// these may have to change in production
+	.fb-icon { 
+		a {
+			background: url("../images/facebook.png") no-repeat; 
+		}
+	}
+	.tw-icon { 
+		a {
+			background: url("../images/twitter.png") no-repeat; 
+		}
+	}
+	.gh-icon { 
+		a {
+			background: url("../images/github.png") no-repeat; 
+		}
+	}
+}
+
 
 
 /*********************
@@ -319,6 +368,7 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
+	min-height: 470px;
 	margin-top: 3em;
 }
 		
@@ -326,12 +376,19 @@ POSTS & CONTENT STYLES
 
 			header {}
 
-			footer {}
+			footer {
+				margin-bottom: 3em;
+				.tags {
+					font-size: 0.75em;
+					line-height: 1.438em;
+					margin: 0;
+				}
+			}
 
 		} /* end .hentry */
 
 		#main {
-			margin-bottom: 1em;
+			margin-bottom: 3em;
 		}
 
 		.single-title,
@@ -427,9 +484,7 @@ POSTS & CONTENT STYLES
 			}
 
 			pre, code {
-				background: #eee;
-				border: 1px solid #cecece;
-				padding: 10px;
+				font-size: 0.875em;
 			}
 
 		} /* end .post-content */
@@ -688,7 +743,14 @@ COMMENT STYLES
 
 	ul {
 
-		li {}
+		li {
+			a, a:visited {
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+
+			}
+		}
 
 	}
 }
@@ -696,13 +758,16 @@ COMMENT STYLES
 
 .commentlist {
 
+	width: 800px;
+	font-size: 0.75em;
+
 	li {
 		position: relative;
 		clear: both;
 		overflow: hidden;
 		list-style-type: none;
-		margin-bottom: 1.5em;
-		padding: 0.7335em 10px;
+		margin-bottom: 2em;
+		padding: 2em 0 0;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -731,13 +796,13 @@ COMMENT STYLES
 	}
 
 	li.depth-1 {
+		border-top: 1px solid @black;
 		margin-left: 0;
 		margin-top: 0;
 	}
 
 	li:not(.depth-1) {
-		margin-right: -10px;
-		margin-left: -10px;
+		margin-left: 1em;
 		margin-top: 0;
 		padding-bottom: 0;
 	}
@@ -750,10 +815,10 @@ COMMENT STYLES
 	/* general comment classes */
 	.alt {}
 	.odd {
-		background: #eee;
+		background: @white;
 	}
 	.even {
-		background: #fefefe;
+		background: @white;
 	}
 	.parent {}
 	.comment {}
@@ -768,7 +833,10 @@ COMMENT STYLES
 
 	/* vcard */
 	.vcard {
-		margin-left: 50px;
+		float: right;
+		font-size: 1em;
+		margin-left: 1em;
+		text-align: right;
 
 		cite.fn {
 			font-weight: 700;
@@ -779,7 +847,7 @@ COMMENT STYLES
 		}
 
 		time {
-			float: right;
+			display: block;
 
 			a {
 				color: #999;
@@ -821,10 +889,12 @@ COMMENT STYLES
 
 	/* comment content */
 	.comment_content {
-		margin-left: 50px;
+
+		font-size: 1em;
+		line-height: 1.438em;
 
 		p {
-			margin: 0.7335em 0 1.5em;
+			margin: 0.25em 16em 1.5em 0.5em;
 			font-size: 1em;
 			line-height: 1.5em;
 		}
@@ -857,16 +927,22 @@ COMMENT FORM STYLES
 ******************************************************************/
 
 .respond-form {
-	margin: 1.5em 10px;
-	padding-bottom: 2.2em;
+	margin: 1.5em 0;
+	width: 800px;
 
 	form {
 		margin: 0.75em 0;
 
+		#comment-form-elements {
+			.author, .email {
+				display: inline-block;
+				margin-right: 1em;
+				margin-bottom: 0.7335em;
+			}
+		}
 		li {
 			list-style-type: none;
 			clear: both;
-			margin-bottom: 0.7335em;
 
 			label,
 			small {
@@ -878,13 +954,14 @@ COMMENT FORM STYLES
 		input[type=email],
 		input[type=url],
 		textarea {
+			color: @black;
+			background: @white;
 			padding: 3px 6px;
-			background: #efefef;
-			border: 2px solid #cecece;
+			border: 2px solid @grey;
 			line-height: 1.5em;
 
 			&:focus {
-				background: #fff;
+				background: @white;
 			}
 
 			/* form validation */
@@ -902,13 +979,12 @@ COMMENT FORM STYLES
 		input[type=text],
 		input[type=email],
 		input[type=url] {
-			max-width: 400px;
-			min-width: 250px;
+			width: 100%;
 		}
 
 		textarea {
 			resize: none;
-			width: 97.3%;
+			width: 100%;
 			height: 150px;
 		}
 
@@ -987,10 +1063,17 @@ CATEGORY LIST STYLES
 .category_image {
 	display: inline-block;
 	margin: 0 0 1em 0;
-	vertical-align: top;
 	width: 175px;
-	img {width: 175px;}
+	//min-height: 80px;
+	vertical-align: top;
 	a {display: block;}
+	/*
+	.link_image {
+		float: left;
+		height: 80px;
+		//img { margin-top: -15px;}
+	}
+	*/
 	p {
 		font-size: 0.75em;
 		margin: 0 0.214em;
@@ -1001,16 +1084,95 @@ CATEGORY LIST STYLES
 	font-family: "ConstructivistSquare", Georgia, serif;
 	text-decoration: none;
 	margin: 0.167em;
+	//margin-top: 0;
 }
 
+/*********************
+WRITERS LIST STYLES
+*********************/
+
+.writers-list {
+	margin: 0;
+
+	li {
+		border-bottom: 1px solid @black;
+		font-family: 'ConstructivistSquare', Georgia, sans-serif;
+		text-rendering: optimizelegibility;
+		font-weight: 500;
+		font-size: 1.75em;
+		line-height: 2em;
+		margin-bottom: 0.375em;
+	}
+
+	a, a:visited {
+		text-decoration: none;
+	}
+}
 
 /*********************
 FOOTER STYLES
 *********************/
 
 .footer {
+	background: @green;
 	clear: both;
+	nav {
+		display: inline-block;
+		float: left;
+		width: 380px;
+	}
+	.footer-nav-pages {
+		.h3 {
+			font-size: 1.438em;
+			margin-bottom: 0;
+		}
+		.menu {
+			font-size: 0.75em;
+			ul {
+				margin: 0;
+			}
+			li {
+				font-family: "ConstructivistSquare", Georgia, serif;
+				display: inline-block;
+				margin-right: 1em;
+			}
+		}
+
+		.attribution {
+			margin: 0;
+			font-size: 0.688em;
+		}
+	}
+
+	.footer-nav-social {
+		border-left: 1px solid @black;
+		border-right: 1px solid @black;
+		text-align: center;
+		margin: 1em 1em 0;
+		width: 330px;
+	}
+
+	.footer-nav-cats {
+		.category-menu {
+			li {
+				display: inline-block;
+				float: left;
+				width: 33%;
+			}
+			.category_title {
+				font-size: 0.75em;
+			}
+		}
+	}
+	a, a:visited {
+		text-decoration: none;
+
+		&:hover, &:focus {
+			color: lighten(@black, 20%);
+		}
+	} 
 }
+
 
 	/*
 	if you checked out the link above:
