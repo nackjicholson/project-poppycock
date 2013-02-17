@@ -756,8 +756,8 @@ GENERAL STYLES
 *********************/
 body {
   font-family: Georgia, serif;
-  font-size: 1.143em;
-  line-height: 1.5em;
+  font-size: 1em;
+  line-height: 1.375em;
   color: #111111;
   background-color: #fdfdfd;
 }
@@ -768,14 +768,19 @@ style a page via class
 /* for sites that are read right to left (i.e. hebrew) */
 /* home page */
 /* blog template page */
+.archive {
+  /* archive page */
+
+}
+.archive #content .category-menu {
+  margin: 0 0 0.5em;
+}
 .archive #content .category-menu li {
   display: inline-block;
-  margin-right: 1em;
 }
 .archive #content .category-menu .category_title {
   display: inline-block;
-  font-size: 1.443em;
-  line-height: 1.625;
+  font-size: 0.889em;
   text-align: center;
   width: 100%;
 }
@@ -783,7 +788,6 @@ style a page via class
 .archive #content .category-menu .active:visited {
   background-color: #d9d9d9;
 }
-/* archive page */
 /* date archive page */
 /* replace the number to the corresponding page number */
 /* search page */
@@ -795,22 +799,15 @@ style a page via class
   /* single post page */
 
 }
-.single .meta {
-  float: right;
-  width: 250px;
+.single .excerpt {
+  display: none;
 }
-.single .excerpt p {
-  color: #6a6a6a;
-  margin: 0;
-  padding: 0 0 1.5em;
+.single .by-line {
+  margin: 0 0 0.5em;
 }
 .single .post {
   margin: 0 auto;
   border: none;
-}
-.single .post-content p {
-  padding-right: 240px;
-  width: 600px;
 }
 /* individual post page by id (i.e. body.postid-73) */
 /* individual paged single (i.e. body.single-paged-3) */
@@ -923,6 +920,7 @@ h1,
 h2,
 .h2 {
   font-size: 1.75em;
+  font-size: 1.5em;
   line-height: 1.4em;
   margin-bottom: 0.375em;
 }
@@ -947,6 +945,8 @@ HEADER SYTLES
 *********************/
 .header {
   background-color: #00de6e;
+  /* search input */
+
 }
 .header a,
 .header a:visited {
@@ -959,24 +959,20 @@ HEADER SYTLES
   color: #444444;
 }
 .header h2.ppc-description {
-  font-family: Georgia, serif;
-  font-size: 0.8em;
-  font-weight: normal;
-  line-height: 1.2em;
-  margin: 4.667em 0 0;
-  color: #111111;
+  display: none;
 }
 .header #searchform {
-  float: right;
+  margin: 1.375em 0;
   font-size: .8em;
-  margin-top: 4.267em;
+}
+.header input {
+  width: 100%;
 }
 .header .menu {
-  float: right;
   font-size: 1em;
 }
 .header .menu ul {
-  margin: 1.667em 0 0;
+  margin: 0.5em 0 0;
 }
 .header .menu li {
   font-family: "ConstructivistSquare", Georgia, serif;
@@ -984,7 +980,9 @@ HEADER SYTLES
   margin-right: 1em;
 }
 #logo {
-  margin: 0 0 .130em;
+  font-size: 1.875em;
+  margin: 0.130em 0;
+  white-space: nowrap;
 }
 /*********************
 NAVIGATION STYLES
@@ -1034,7 +1032,10 @@ and moe scalable.
   margin: 0;
 }
 .footer-nav .menu-item {
-  margin: 0.5em 1.625em;
+  display: list-item;
+  margin: 1em 0;
+  width: 33%;
+  float: left;
 }
 .footer-nav .menu-item a {
   height: 48px;
@@ -1056,8 +1057,8 @@ and moe scalable.
 POSTS & CONTENT STYLES
 *********************/
 #content {
-  min-height: 470px;
-  margin-top: 3em;
+  margin-top: 1.375em;
+  min-height: 23.125em;
 }
 .hentry footer {
   margin-bottom: 3em;
@@ -1077,8 +1078,11 @@ POSTS & CONTENT STYLES
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
 .post {
-  width: 600px;
   border-bottom: 1px solid #111111;
+}
+.post img {
+  max-width: 100%;
+  height: auto;
 }
 /* general post style */
 /* general article on a page style */
@@ -1094,11 +1098,11 @@ POSTS & CONTENT STYLES
 /* post content */
 .post-content {
   /*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/
+	image alignment on a screen this size may be
+	a bit difficult. It's set to start aligning
+	and floating images at the next breakpoint,
+	but it's up to you. Feel free to change it up.
+	*/
 
 }
 .post-content dd {
@@ -1161,11 +1165,11 @@ POSTS & CONTENT STYLES
   position: relative;
 }
 .train-board .excerpt {
-  font-size: .75em;
+  font-size: 0.75em;
   display: table;
   height: 100%;
-  margin-left: 3px;
-  width: 450px;
+  margin-left: 0.250em;
+  width: 26.250em;
 }
 .train-board .excerpt p {
   display: table-cell;
@@ -1176,16 +1180,24 @@ POSTS & CONTENT STYLES
   float: right;
   font-size: 0.889em;
   height: 100%;
-  margin-right: 3px;
+  margin-right: 0.215em;
   text-align: right;
-  width: 100px;
+  width: 6.929em;
 }
 .train-board .meta p {
   display: table-cell;
   vertical-align: middle;
 }
+/* end .train-board */
+.archive-post .h2 {
+  display: inline-block;
+  float: left;
+  font-size: 1.25em;
+  width: 15.9em;
+}
 .archive-post .post-content {
   color: #6a6a6a;
+  display: none;
   font-size: 0.833em;
 }
 .archive-post .post-content p {
@@ -1194,11 +1206,18 @@ POSTS & CONTENT STYLES
 .archive-post .meta {
   font-size: 0.833em;
   text-align: right;
-  margin: 2.133em 0 0.8em;
+  display: inline-block;
+  float: left;
+  margin: 1em 0 0.5em;
+  width: 7.5em;
 }
 .archive-post .meta p {
   margin: 0.250em 0;
 }
+.archive-post .article-footer {
+  margin-bottom: 0;
+}
+/* end .archive-post */
 .ppc-profile {
   margin-bottom: 1em;
 }
@@ -1215,7 +1234,7 @@ POSTS & CONTENT STYLES
   margin-left: 1em;
 }
 .avatar {
-  text-align: right;
+  text-align: center;
 }
 /******************************************************************
 PAGE NAVI STYLES
@@ -1302,7 +1321,6 @@ COMMENT STYLES
   text-decoration: none;
 }
 .commentlist {
-  width: 800px;
   font-size: 0.75em;
   /* general comment classes */
 
@@ -1416,11 +1434,10 @@ COMMENT STYLES
 COMMENT FORM STYLES
 ******************************************************************/
 .respond-form {
-  margin: 1.5em 0;
-  width: 800px;
+  margin: 1.5em 0 0;
 }
 .respond-form form {
-  margin: 0.75em 0;
+  margin: 0.75em 0 0;
 }
 .respond-form form #comment-form-elements .author,
 .respond-form form #comment-form-elements .email {
@@ -1467,16 +1484,21 @@ COMMENT FORM STYLES
   box-shadow: none;
 }
 .respond-form form input[type=text],
-.respond-form form input[type=email],
-.respond-form form input[type=url] {
+.respond-form form input[type=email] {
   width: 100%;
+}
+.respond-form form input[type=url] {
+  width: 96%;
 }
 .respond-form form textarea {
   resize: none;
-  width: 100%;
-  height: 150px;
+  width: 96%;
+  height: 8.333em;
 }
 /* comment submit button */
+.submit-button {
+  margin: 1em 0 0;
+}
 /* comment form title */
 #comment-form-title {
   margin: 0 0 1.1em;
@@ -1502,7 +1524,7 @@ SIDEBARS & ASIDES
 CATEGORY LIST STYLES
 *********************/
 .categories-list {
-  margin-bottom: 1em;
+  margin: 2em 0 1em;
 }
 .categories-list .h3 {
   border-bottom: 1px solid #111111;
@@ -1514,16 +1536,8 @@ CATEGORY LIST STYLES
 .category_image {
   display: inline-block;
   margin: 0 0 1em 0;
-  width: 175px;
+  width: 8.5em;
   vertical-align: top;
-  /*
-	.link_image {
-		float: left;
-		height: 80px;
-		//img { margin-top: -15px;}
-	}
-	*/
-
 }
 .category_image a {
   display: block;
@@ -1561,13 +1575,11 @@ WRITERS LIST STYLES
 FOOTER STYLES
 *********************/
 .footer {
-  background: #00de6e;
+  background: #efefef;
   clear: both;
 }
-.footer nav {
-  display: inline-block;
-  float: left;
-  width: 380px;
+.footer .footer-nav-pages {
+  font-size: 1.313em;
 }
 .footer .footer-nav-pages .h3 {
   font-size: 1.438em;
@@ -1588,12 +1600,8 @@ FOOTER STYLES
   margin: 0;
   font-size: 0.688em;
 }
-.footer .footer-nav-social {
-  border-left: 1px solid #111111;
-  border-right: 1px solid #111111;
-  text-align: center;
-  margin: 1em 1em 0;
-  width: 330px;
+.footer .footer-nav-cats .category-menu {
+  height: 3em;
 }
 .footer .footer-nav-cats .category-menu li {
   display: inline-block;
@@ -1647,6 +1655,13 @@ tweeners.
   
   ******************************************************************/
   /*********************
+  GENERAL STYLES
+  *********************/
+  body {
+    font-size: 1.125em;
+    line-height: 1.5em;
+  }
+  /*********************
   NAVIGATION STYLES
   *********************/
   /* .menu is clearfixed inside mixins.scss */
@@ -1683,26 +1698,26 @@ tweeners.
   .post-content {
     /* at this larger size, we can start to align images */
   
-  }
-  .post-content .alignleft,
-  .post-content img.alignleft {
-    margin-right: 1em;
-    display: inline;
-    float: left;
-  }
-  .post-content .alignright,
-  .post-content img.alignright {
-    margin-left: 1em;
-    margin-right: -240px;
-    display: inline;
-    float: right;
-  }
-  .post-content .aligncenter,
-  .post-content img.aligncenter {
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    clear: both;
+    /* move up
+  	.alignleft, img.alignleft { 
+  		margin-right: 1em; 
+  		display: inline; 
+  		float: left; 
+  	}
+  	.alignright, img.alignright { 
+  		margin-left: 1em; 
+  		margin-right: -240px;
+  		display: inline; 
+  		float: right; 
+  	}
+  	.aligncenter, img.aligncenter { 
+  		margin-right: auto; 
+  		margin-left: auto; 
+  		display: block; 
+  		clear: both; 
+  	}
+  	*/
+  
   }
   /* end .post-content */
   /*********************
@@ -1743,7 +1758,20 @@ you can add resource intensive styles.
   ********************/
   /* home page */
   /* blog page */
-  /* archive page */
+  .archive {
+    /* archive page */
+  
+  }
+  .archive #content .category-menu {
+    margin: 1em 0;
+  }
+  .archive #content .category-menu li {
+    margin-right: 1em;
+  }
+  .archive #content .category_title {
+    font-size: 1.443em;
+    line-height: 1.625;
+  }
   /* date archive page */
   /* replace the number to the corresponding page number */
   /* search page */
@@ -1751,7 +1779,32 @@ you can add resource intensive styles.
   /* no results search page */
   /* individual paged search (i.e. body.search-paged-3) */
   /* 404 page */
-  /* single post page */
+  .single {
+    /* single post page */
+  
+  }
+  .single .meta {
+    float: right;
+    width: 13.889em;
+  }
+  .single .excerpt {
+    display: block;
+  }
+  .single .excerpt p {
+    color: #6a6a6a;
+    margin: 0;
+    padding: 0 0 1.5em;
+  }
+  .single .by-line {
+    margin: 1em 0 2em;
+  }
+  .single .by-line a {
+    display: block;
+  }
+  .single .post-content p {
+    padding-right: 13.333em;
+    width: 33.333em;
+  }
   /* individual post page by id (i.e. body.postid-73) */
   /* individual paged single (i.e. body.single-paged-3) */
   /* attatchment page */
@@ -1857,9 +1910,48 @@ you can add resource intensive styles.
   .last {
     float: right;
   }
+  /******************************************************************
+  H1, H2, H3, H4, H5 STYLES
+  ******************************************************************/
+  h2,
+  .h2 {
+    font-size: 1.75em;
+  }
   /*********************
   HEADER SYTLES
   *********************/
+  .header {
+    /* search input */
+  
+  }
+  .header h2.ppc-description {
+    color: #111111;
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 0.8em;
+    font-weight: normal;
+    line-height: 1.2em;
+    margin: 1.375em 0 0;
+    margin: 4.667em 0 0;
+  }
+  .header #searchform {
+    margin: 4.250em 0 0;
+    float: right;
+  }
+  .header input {
+    width: auto;
+  }
+  .header .menu {
+    float: right;
+  }
+  .header .menu ul {
+    margin: 1.625em 0 0;
+  }
+  #logo {
+    margin: 0 0 .130em;
+    font-size: 2.5em;
+    white-space: normal;
+  }
   /*********************
   NAVIGATION STYLES
   *********************/
@@ -1926,6 +2018,59 @@ you can add resource intensive styles.
     display: block;
   }
   /* end .nav */
+  .footer-nav .menu-item {
+    display: inline-block;
+    float: none;
+    margin: 0.5em 1.625em;
+    width: auto;
+  }
+  /*********************
+  POSTS & CONTENT STYLES
+  *********************/
+  #content {
+    margin-top: 3em;
+    min-height: 26.111em;
+  }
+  .post {
+    width: 33.333em;
+  }
+  .train-board .excerpt {
+    margin-left: 0.231em;
+    width: 34.385em;
+  }
+  .train-board .meta {
+    width: 6.063em;
+    margin-right: 0.188em;
+  }
+  /* end .train-board */
+  .archive-post .h2 {
+    display: block;
+    float: none;
+    font-size: 1.5em;
+    width: auto;
+  }
+  .archive-post .post-content {
+    display: block;
+  }
+  .archive-post .meta {
+    display: block;
+    float: none;
+    margin: 2.133em 0 0.8em;
+    width: auto;
+  }
+  .archive-post .article-footer {
+    margin-bottom: 3em;
+  }
+  /* end .archive-post */
+  .avatar {
+    text-align: right;
+  }
+  /******************************************************************
+  COMMENT STYLES
+  ******************************************************************/
+  .commentlist {
+    width: 66.667em;
+  }
   /*********************
   SIDEBARS & ASIDES
   *********************/
@@ -1961,8 +2106,35 @@ you can add resource intensive styles.
   /* search widget */
   /* text widget */
   /*********************
+  CATEGORY LIST STYLES
+  *********************/
+  .categories-list {
+    margin: 0 0 1em;
+  }
+  .category_image {
+    width: 9.722em;
+  }
+  /*********************
   FOOTER STYLES
   *********************/
+  .footer nav {
+    display: inline-block;
+    float: left;
+    width: 380px;
+  }
+  .footer .footer-nav-pages {
+    font-size: 1em;
+  }
+  .footer .footer-nav-social {
+    border-left: 1px solid #111111;
+    border-right: 1px solid #111111;
+    text-align: center;
+    margin: 1em 1em 0;
+    width: 330px;
+  }
+  .footer .footer-nav-cats .category-menu {
+    height: auto;
+  }
   /*
   you'll probably need to do quite a bit
   of overriding here if you styled them for

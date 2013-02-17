@@ -12,9 +12,8 @@
 								<div class="excerpt">
 									<?php the_excerpt(); ?>
 								</div>
-								<p>
+								<p class="by-line">
 									<?php the_author_posts_link(); ?>
-									<br>
 									<time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time> 
 								</p>
 							</div>
