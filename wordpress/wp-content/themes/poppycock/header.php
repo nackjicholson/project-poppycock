@@ -39,17 +39,18 @@
 			<header class="header" role="banner">
 			
 				<div id="inner-header" class="wrap clearfix">
-					<!-- if you'd like to use the site description you can un-comment it below -->
-					<h2 class="eightcol ppc-description"><?php bloginfo('description'); ?></h2>
-					
-					<div id="search_wrapper" class="fourcol"><?php get_search_form(); ?></div>	
 
-					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
-					<h1 id="logo" class="eightcol first h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
+					<!-- site description -->
+					<h2 class="twelvecol first ppc-description"><?php bloginfo('description'); ?></h2>
 					
-					<nav role="navigation" class="fourcol">
+					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
+					<h1 id="logo" class="twelvecol first h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
+
+					<nav role="navigation" class="ninecol first">
 						<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
 					</nav>
+
+					<div id="search_wrapper" class="threecol last"><?php get_search_form(); ?></div>	
 				
 				</div> <!-- end #inner-header -->
 			

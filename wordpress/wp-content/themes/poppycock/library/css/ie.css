@@ -547,30 +547,16 @@ HEADER SYTLES
   font-size: 0.8em;
   font-weight: normal;
   line-height: 1.2em;
-  margin: 1.375em 0 0;
   margin: 4.667em 0 0;
-}
-.header #searchform {
-  margin: 4.250em 0 0;
-  float: right;
 }
 .header input {
   width: auto;
 }
-.header .menu {
-  float: right;
-}
 .header .menu ul {
-  margin: 1.625em 0 0;
-}
-.header .menu li {
-  margin: 0 0 0 1em;
+  margin: 0 0 1em;
 }
 #logo {
-  /* move up
-	*/
-
-  margin: 0 0 .130em;
+  margin: 0 0 0.130em;
   font-size: 2.444em;
   line-height: 1.364em;
 }
