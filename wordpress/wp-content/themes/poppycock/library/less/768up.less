@@ -25,7 +25,12 @@ style a page via class
 ********************/
 
 .rtl {}
-.home {}                            /* home page */
+.home {
+	.post {
+		width: auto;
+		max-width: 33.333em; // 600px@fs18
+	}
+}                            /* home page */
 .blog {}                            /* blog page */
 .archive {                          /* archive page */
 	#content {
@@ -178,13 +183,18 @@ HEADER SYTLES
 		ul {
 			margin: 1.625em 0 0;
 		}
+		li {
+			margin: 0 0 0 1em;
+		}
 	}
 }
 
 #logo {
+	/* move up
+	*/
 	margin: 0 0 .130em;
-	font-size: 2.5em; // back to normal
-	white-space: normal;
+	font-size: 2.444em; // 44px@fs18
+	line-height: 1.364em; // 60px@fs18
 }
 	
 /*********************
@@ -284,10 +294,13 @@ NAVIGATION STYLES
 
 .footer-nav {
 	.menu-item {
+		/* move up
+		 * although maybe not...I truly don't know right now.
 		display: inline-block;
 		float: none;
 		margin: 0.5em 1.625em;
 		width: auto;
+		*/
 	}
 }
 
@@ -316,21 +329,26 @@ POSTS & CONTENT STYLES
 	}
 } /* end .train-board */
 
+/* 
+ * Because base.less doesn't use the grid, and I had to sort of fake layout for these elements on the 480 screen I need
+ * to conciously set these classes back to their original values as set by the grid
+ */
 .archive-post {
-	.h2 {
-		display: block; // back to normal
-		float: none;
-		font-size: 1.5em; //27px@fs18
-		width: auto; // back to normal
+	width: auto;
+	.h2 { // .sixcol.first
+		display: block; 
+		font-size: 1.5em; // 27px@fs18
+		margin-top: 1.185em; // 32px@fs27
+		width: 48.618784527%; 
 	}
-	.post-content {
-		display: block; // back to normal
+	.post-content { // .fourcol
+		display: block; 
 	}
-	.meta {
+	.meta { // .twocol.last
 		display: block;
-		float: none;
+		float: right;
 		margin: 2.133em 0 0.8em;
-		width: auto;
+		width: 14.364640883%; 
 	}
 	.article-footer {
 		margin-bottom: 3em;
@@ -483,8 +501,15 @@ CATEGORY LIST STYLES
 .categories-list {
 	margin: 0 0 1em;
 }
+
+.term-images {
+	overflow: hidden;
+	text-align: right;
+}
+
 .category_image {
 	width: 9.722em; // 175px@fs18
+	text-align: left;
 }
 
 /*********************
@@ -493,25 +518,32 @@ FOOTER STYLES
 
 .footer {
 	nav {
+		/* move up ... possible
 		display: inline-block;
 		float: left;
-		//width: 21.111em; // 380px;
-		width: 380px;
+		width: 21.111em; // 380px;
+		*/
 	}
 	.footer-nav-pages {
 		font-size: 1em;
+		.h3 {
+			font-size: 0.875em;
+		}
 	}
 	.footer-nav-social {
+		/* move up ... possible
 		border-left: 1px solid @black;
 		border-right: 1px solid @black;
 		text-align: center;
 		margin: 1em 1em 0;
-		//width: 18.333em; //330px;
-		width: 330px;
+		width: 18.333em; //330px;
+		*/
 	}
 	.footer-nav-cats {
 		.category-menu {
-			height: auto;
+			.category_title {
+				font-size: 0.563em;
+			}
 		}
 	}
 }

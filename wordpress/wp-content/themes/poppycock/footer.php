@@ -6,17 +6,17 @@
     					<?php bones_footer_links(); // Adjust using Menus in Wordpress Admin ?>
 	        </nav>-->
 
-	        <nav role="navigation" class="footer-nav-pages">
+	        <nav role="navigation" class="fourcol first footer-nav-pages">
 	        	<h1 class="h3"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h3>
 						<?php bones_main_nav(); ?>
 						<p class="attribution">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
 	        </nav>
 
-	        <nav role="navigation" class="footer-nav-social">
+	        <nav role="navigation" class="fourcol footer-nav-social">
     				<?php bones_footer_links(); // Adjust using Menus in Wordpress Admin ?>
 	        </nav>
 
-	        <nav role="navigation" class="footer-nav-cats">
+	        <nav role="navigation" class="fourcol last footer-nav-cats">
 	        	<?php 
 						    	// TODO put this as a function
 						    	$categories = get_categories( array('orderby' => 'id', 'exclude' => '1') ); 

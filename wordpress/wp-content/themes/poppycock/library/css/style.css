@@ -755,11 +755,12 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 body {
+  background-color: #fdfdfd;
+  color: #111111;
   font-family: Georgia, serif;
   font-size: 1em;
   line-height: 1.375em;
-  color: #111111;
-  background-color: #fdfdfd;
+  min-width: 480px;
 }
 /********************
 WORDPRESS BODY CLASSES
@@ -977,12 +978,11 @@ HEADER SYTLES
 .header .menu li {
   font-family: "ConstructivistSquare", Georgia, serif;
   display: inline-block;
-  margin-right: 1em;
+  margin: 0 1em 0 0;
 }
 #logo {
   font-size: 1.875em;
   margin: 0.130em 0;
-  white-space: nowrap;
 }
 /*********************
 NAVIGATION STYLES
@@ -1032,7 +1032,6 @@ and moe scalable.
   margin: 0;
 }
 .footer-nav .menu-item {
-  display: list-item;
   margin: 1em 0;
   width: 33%;
   float: left;
@@ -1601,7 +1600,9 @@ FOOTER STYLES
   font-size: 0.688em;
 }
 .footer .footer-nav-cats .category-menu {
-  height: 3em;
+  overflow: hidden;
+  /* for floats to take space */
+
 }
 .footer .footer-nav-cats .category-menu li {
   display: inline-block;
@@ -1756,6 +1757,10 @@ you can add resource intensive styles.
   WORDPRESS BODY CLASSES
   style a page via class
   ********************/
+  .home .post {
+    width: auto;
+    max-width: 33.333em;
+  }
   /* home page */
   /* blog page */
   .archive {
@@ -1947,10 +1952,16 @@ you can add resource intensive styles.
   .header .menu ul {
     margin: 1.625em 0 0;
   }
+  .header .menu li {
+    margin: 0 0 0 1em;
+  }
   #logo {
+    /* move up
+  	*/
+  
     margin: 0 0 .130em;
-    font-size: 2.5em;
-    white-space: normal;
+    font-size: 2.444em;
+    line-height: 1.364em;
   }
   /*********************
   NAVIGATION STYLES
@@ -2019,10 +2030,14 @@ you can add resource intensive styles.
   }
   /* end .nav */
   .footer-nav .menu-item {
-    display: inline-block;
-    float: none;
-    margin: 0.5em 1.625em;
-    width: auto;
+    /* move up
+  		 * although maybe not...I truly don't know right now.
+  		display: inline-block;
+  		float: none;
+  		margin: 0.5em 1.625em;
+  		width: auto;
+  		*/
+  
   }
   /*********************
   POSTS & CONTENT STYLES
@@ -2043,20 +2058,27 @@ you can add resource intensive styles.
     margin-right: 0.188em;
   }
   /* end .train-board */
+  /* 
+   * Because base.less doesn't use the grid, and I had to sort of fake layout for these elements on the 480 screen I need
+   * to conciously set these classes back to their original values as set by the grid
+   */
+  .archive-post {
+    width: auto;
+  }
   .archive-post .h2 {
     display: block;
-    float: none;
     font-size: 1.5em;
-    width: auto;
+    margin-top: 1.185em;
+    width: 48.618784527%;
   }
   .archive-post .post-content {
     display: block;
   }
   .archive-post .meta {
     display: block;
-    float: none;
+    float: right;
     margin: 2.133em 0 0.8em;
-    width: auto;
+    width: 14.364640883%;
   }
   .archive-post .article-footer {
     margin-bottom: 3em;
@@ -2111,29 +2133,43 @@ you can add resource intensive styles.
   .categories-list {
     margin: 0 0 1em;
   }
+  .term-images {
+    overflow: hidden;
+    text-align: right;
+  }
   .category_image {
     width: 9.722em;
+    text-align: left;
   }
   /*********************
   FOOTER STYLES
   *********************/
   .footer nav {
-    display: inline-block;
-    float: left;
-    width: 380px;
+    /* move up ... possible
+  		display: inline-block;
+  		float: left;
+  		width: 21.111em; // 380px;
+  		*/
+  
   }
   .footer .footer-nav-pages {
     font-size: 1em;
   }
-  .footer .footer-nav-social {
-    border-left: 1px solid #111111;
-    border-right: 1px solid #111111;
-    text-align: center;
-    margin: 1em 1em 0;
-    width: 330px;
+  .footer .footer-nav-pages .h3 {
+    font-size: 0.875em;
   }
-  .footer .footer-nav-cats .category-menu {
-    height: auto;
+  .footer .footer-nav-social {
+    /* move up ... possible
+  		border-left: 1px solid @black;
+  		border-right: 1px solid @black;
+  		text-align: center;
+  		margin: 1em 1em 0;
+  		width: 18.333em; //330px;
+  		*/
+  
+  }
+  .footer .footer-nav-cats .category-menu .category_title {
+    font-size: 0.563em;
   }
   /*
   you'll probably need to do quite a bit

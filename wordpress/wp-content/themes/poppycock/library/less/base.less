@@ -16,11 +16,12 @@ GENERAL STYLES
 *********************/
 
 body {
+	background-color: @white;
+	color: @black;
 	font-family: Georgia, serif;
 	font-size: 1em;
 	line-height: 1.375em;
-	color: @black;
-	background-color: @white;
+	min-width: 480px;
 }
 
 /********************
@@ -221,7 +222,7 @@ HEADER SYTLES
 		li {
 			font-family: "ConstructivistSquare", Georgia, serif;
 			display: inline-block;
-			margin-right: 1em;
+			margin: 0 1em 0 0;
 		}
 	}
 }
@@ -229,7 +230,6 @@ HEADER SYTLES
 #logo {
 	font-size: 1.875em;
 	margin: 0.130em 0;
-	white-space: nowrap;
 }
 
 /*********************
@@ -313,7 +313,6 @@ and moe scalable.
 .footer-nav {
 	margin: 0;
 	.menu-item {
-		display: list-item;
 		margin: 1em 0;
 		width: 33%;
 		float:left;
@@ -568,13 +567,13 @@ POSTS & CONTENT STYLES
 
 // archive posts only
 .archive-post {
-	.h2 {
+	.h2 { // .sixcol.first
 		display: inline-block;
 		float: left;
 		font-size: 1.25em; // 20px@fs16
 		width: 15.9em; // 318px@fs20
 	}
-	.post-content {
+	.post-content { // .fourcol
 		color: lighten(@black, 35%);
 		display: none;
 		font-size: 0.833em;
@@ -582,7 +581,7 @@ POSTS & CONTENT STYLES
 			margin: 2.133em 0 0.8em;
 		}
 	}
-	.meta {
+	.meta { // .twocol.last
 		font-size: 0.833em; // 13px@fs16 14px@fs18
 		text-align: right;
 		display: inline-block;
@@ -1140,7 +1139,7 @@ FOOTER STYLES
 
 	.footer-nav-cats {
 		.category-menu {
-			height: 3em;
+			overflow: hidden; /* for floats to take space */
 			li {
 				display: inline-block;
 				float: left;
