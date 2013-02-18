@@ -55,8 +55,8 @@ style a page via class
 .error404 {}                        /* 404 page */
 .single {                         /* single post page */
 	.meta {
-		float: right;
-		width: 13.889em;
+		width: 33.333em;
+		margin: 0 auto;
 	}
 		
 	.excerpt {
@@ -64,14 +64,10 @@ style a page via class
 		p {
 			color: lighten(@black, 35%);
 			margin: 0;
-			padding: 0 0 1.5em;
 		}
 	}	
 	.by-line {
-		margin: 1em 0 2em;
-		a {
-			display: block;
-		}
+		margin: 0 0 1em;
 	}
 	.post-content {
 		p {
@@ -281,17 +277,6 @@ NAVIGATION STYLES
 	
 } /* end .nav */
 
-.footer-nav {
-	.menu-item {
-		/* move up
-		 * although maybe not...I truly don't know right now.
-		display: inline-block;
-		float: none;
-		margin: 0.5em 1.625em;
-		width: auto;
-		*/
-	}
-}
 
 /*********************
 POSTS & CONTENT STYLES
@@ -354,10 +339,9 @@ COMMENT STYLES
 ******************************************************************/
 
 .commentlist {
-	// TODO I think this should move up
-	// because at 768 this causes a scroll
-	// just width auto (nothing) would be okay.
+	/* move up
 	width: 66.667em; // 800px@fs12;
+	*/
 }
 	
 /*********************
@@ -506,27 +490,11 @@ FOOTER STYLES
 *********************/
 
 .footer {
-	nav {
-		/* move up ... possible
-		display: inline-block;
-		float: left;
-		width: 21.111em; // 380px;
-		*/
-	}
 	.footer-nav-pages {
 		font-size: 1em;
 		.h3 {
 			font-size: 0.875em;
 		}
-	}
-	.footer-nav-social {
-		/* move up ... possible
-		border-left: 1px solid @black;
-		border-right: 1px solid @black;
-		text-align: center;
-		margin: 1em 1em 0;
-		width: 18.333em; //330px;
-		*/
 	}
 	.footer-nav-cats {
 		.category-menu {
