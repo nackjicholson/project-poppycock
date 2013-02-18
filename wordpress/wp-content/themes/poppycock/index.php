@@ -24,12 +24,12 @@
 								    <h1 class="h2 train-board-title"><?php the_title(); ?></h1>
 
 								    <section class="post-content clearfix">
+									    <div class="excerpt"><?php the_excerpt(); ?></div>
 									    <div class="meta">
 									    	<p>
 										    	<time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time> 
 										    </p>
 									    </div>
-									    <div class="excerpt"><?php the_excerpt(); ?></div>
 								    </section> <!-- end article section -->
 
 						    </header> <!-- end article header -->

@@ -632,15 +632,6 @@ POSTS & CONTENT STYLES
 .post {
   width: 33.333em;
 }
-.train-board .excerpt {
-  margin-left: 0.231em;
-  width: 34.385em;
-}
-.train-board .meta {
-  width: 6.063em;
-  margin-right: 0.188em;
-}
-/* end .train-board */
 /* 
  * Because base.less doesn't use the grid, and I had to sort of fake layout for these elements on the 480 screen I need
  * to conciously set these classes back to their original values as set by the grid
