@@ -40,7 +40,7 @@
 				this.$section.height(boardheight);
 			},
 			over: function() {
-				// stop animations...lol
+				// stop animations
 				this.$title.stop().animate({
 					top: -this.boardheight,
 				},
@@ -51,7 +51,7 @@
 				200);
 			},
 			out: function() {
-				// stop animations...lol
+				// stop animations
 				this.$title.stop().animate({
 					top: 0,
 				},
