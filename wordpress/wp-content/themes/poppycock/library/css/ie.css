@@ -275,6 +275,13 @@ upon your base.scss styles.
 
 ******************************************************************/
 /*********************
+GENERAL STYLES
+*********************/
+body {
+  font-size: 1.125em;
+  line-height: 1.5em;
+}
+/*********************
 NAVIGATION STYLES
 *********************/
 /* .menu is clearfixed inside mixins.scss */
@@ -311,26 +318,26 @@ POSTS & CONTENT STYLES
 .post-content {
   /* at this larger size, we can start to align images */
 
-}
-.post-content .alignleft,
-.post-content img.alignleft {
-  margin-right: 1em;
-  display: inline;
-  float: left;
-}
-.post-content .alignright,
-.post-content img.alignright {
-  margin-left: 1em;
-  margin-right: -240px;
-  display: inline;
-  float: right;
-}
-.post-content .aligncenter,
-.post-content img.aligncenter {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-  clear: both;
+  /* move up
+	.alignleft, img.alignleft { 
+		margin-right: 1em; 
+		display: inline; 
+		float: left; 
+	}
+	.alignright, img.alignright { 
+		margin-left: 1em; 
+		margin-right: -240px;
+		display: inline; 
+		float: right; 
+	}
+	.aligncenter, img.aligncenter { 
+		margin-right: auto; 
+		margin-left: auto; 
+		display: block; 
+		clear: both; 
+	}
+	*/
+
 }
 /* end .post-content */
 /*********************
@@ -361,9 +368,26 @@ GENERAL STYLES
 WORDPRESS BODY CLASSES
 style a page via class
 ********************/
+.home .post {
+  width: auto;
+  max-width: 33.333em;
+}
 /* home page */
 /* blog page */
-/* archive page */
+.archive {
+  /* archive page */
+
+}
+.archive #content .category-menu {
+  margin: 1em 0;
+}
+.archive #content .category-menu li {
+  margin-right: 1em;
+}
+.archive #content .category_title {
+  font-size: 1.443em;
+  line-height: 1.625;
+}
 /* date archive page */
 /* replace the number to the corresponding page number */
 /* search page */
@@ -371,7 +395,28 @@ style a page via class
 /* no results search page */
 /* individual paged search (i.e. body.search-paged-3) */
 /* 404 page */
-/* single post page */
+.single {
+  /* single post page */
+
+}
+.single .meta {
+  width: 33.333em;
+  margin: 0 auto;
+}
+.single .excerpt {
+  display: block;
+}
+.single .excerpt p {
+  color: #6a6a6a;
+  margin: 0;
+}
+.single .by-line {
+  margin: 0 0 1em;
+}
+.single .post-content p {
+  padding-right: 13.333em;
+  width: 33.333em;
+}
 /* individual post page by id (i.e. body.postid-73) */
 /* individual paged single (i.e. body.single-paged-3) */
 /* attatchment page */
@@ -477,9 +522,40 @@ LAYOUT & GRID STYLES
 .last {
   float: right;
 }
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+h2,
+.h2 {
+  font-size: 1.75em;
+}
 /*********************
 HEADER SYTLES
 *********************/
+.header {
+  /* search input */
+
+}
+.header h2.ppc-description {
+  color: #111111;
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 0.8em;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 4.667em 0 0;
+}
+.header input {
+  width: auto;
+}
+.header .menu ul {
+  margin: 0 0 1em;
+}
+#logo {
+  margin: 0 0 0.130em;
+  font-size: 2.444em;
+  line-height: 1.364em;
+}
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -547,6 +623,54 @@ NAVIGATION STYLES
 }
 /* end .nav */
 /*********************
+POSTS & CONTENT STYLES
+*********************/
+#content {
+  margin-top: 3em;
+  min-height: 26.111em;
+}
+.post {
+  width: 33.333em;
+}
+/* 
+ * Because base.less doesn't use the grid, and I had to sort of fake layout for these elements on the 480 screen I need
+ * to conciously set these classes back to their original values as set by the grid
+ */
+.archive-post {
+  width: auto;
+}
+.archive-post .h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-top: 1.185em;
+  width: 48.618784527%;
+}
+.archive-post .post-content {
+  display: block;
+}
+.archive-post .meta {
+  display: block;
+  float: right;
+  margin: 2.133em 0 0.8em;
+  width: 14.364640883%;
+}
+.archive-post .article-footer {
+  margin-bottom: 3em;
+}
+/* end .archive-post */
+.avatar {
+  text-align: right;
+}
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+.commentlist {
+  /* move up
+	width: 66.667em; // 800px@fs12;
+	*/
+
+}
+/*********************
 SIDEBARS & ASIDES
 *********************/
 .sidebar {
@@ -581,8 +705,31 @@ SIDEBARS & ASIDES
 /* search widget */
 /* text widget */
 /*********************
+CATEGORY LIST STYLES
+*********************/
+.categories-list {
+  margin: 0 0 1em;
+}
+.term-images {
+  overflow: hidden;
+  text-align: right;
+}
+.category_image {
+  width: 9.722em;
+  text-align: left;
+}
+/*********************
 FOOTER STYLES
 *********************/
+.footer .footer-nav-pages {
+  font-size: 1em;
+}
+.footer .footer-nav-pages .h3 {
+  font-size: 0.875em;
+}
+.footer .footer-nav-cats .category-menu .category_title {
+  font-size: 0.563em;
+}
 /*
 you'll probably need to do quite a bit
 of overriding here if you styled them for
@@ -607,6 +754,74 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 
 
 ******************************************************************/
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+.single .meta {
+  float: right;
+  margin: 0;
+  width: 13.889em;
+}
+.single .excerpt p {
+  padding: 0 0 1.5em;
+}
+.single .by-line {
+  margin: 1em 0 2em;
+}
+.single .by-line a {
+  display: block;
+}
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* post content */
+.post-content {
+  /* at this larger size, we can start to align images */
+
+}
+.post-content .alignleft,
+.post-content img.alignleft {
+  margin-right: 1em;
+  display: inline;
+  float: left;
+}
+.post-content .alignright,
+.post-content img.alignright {
+  margin-left: 1em;
+  margin-right: -240px;
+  display: inline;
+  float: right;
+}
+.post-content .aligncenter,
+.post-content img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both;
+}
+/* end .post-content */
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+.commentlist {
+  width: 800px;
+}
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+.respond-form form textarea {
+  width: 800px;
+}
+/*********************
+FOOTER STYLES
+*********************/
+.footer .footer-nav-pages .h3 {
+  font-size: 1em;
+}
+.footer .footer-nav-cats .category-menu .category_title {
+  font-size: 0.750em;
+}
 /* 
 you can call the larger styles if you want, but there's really no need 
 */

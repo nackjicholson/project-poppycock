@@ -92,7 +92,7 @@ The comments page for Bones
 		  <small><?php _e("(will not be published)", "bonestheme"); ?></small>
 		</li>
 		
-		<li>
+		<li class="url">
 		  <label for="url"><?php _e("Website", "bonestheme"); ?></label>
 		  <input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e('Got a website?', 'bonestheme'); ?>" tabindex="3" />
 		</li>
@@ -103,7 +103,7 @@ The comments page for Bones
 	
 	<p><textarea name="comment" id="comment" placeholder="<?php _e('Go ahead, say something...', 'bonestheme'); ?>" tabindex="4"></textarea></p>
 	
-	<p>
+	<p class="submit-button">
 	  <input name="submit" type="submit" id="submit" class="button" tabindex="5" value="<?php _e('Submit', 'bonestheme'); ?>" />
 	  <?php comment_id_fields(); ?>
 	</p>

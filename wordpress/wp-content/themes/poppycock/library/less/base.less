@@ -16,11 +16,12 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: Georgia, serif;
-	font-size: 1.143em;
-	line-height: 1.5em;
-	color: @black;
 	background-color: @white;
+	color: @black;
+	font-family: Georgia, serif;
+	font-size: 1em;
+	line-height: 1.375em;
+	min-width: 480px;
 }
 
 /********************
@@ -31,17 +32,16 @@ style a page via class
 .rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
 .home {}                          /* home page */
 .blog {}                          /* blog template page */
-.archive {
+.archive {                        /* archive page */
 	#content {
 	.category-menu {
+		margin: 0 0 0.5em;
 		li {
 			display: inline-block;
-			margin-right: 1em;
 		}
 		.category_title {
 			display: inline-block;
-			font-size: 1.443em;
-			line-height: 1.625;
+			font-size: 0.889em;
 			text-align: center;
 			width: 100%;
 		}
@@ -50,7 +50,7 @@ style a page via class
 		}
 	}
 	}
-}                       /* archive page */
+}                       
 .date {}                          /* date archive page */
 	.date-paged-1 {}              /* replace the number to the corresponding page number */
 .search {}                        /* search page */
@@ -60,28 +60,15 @@ style a page via class
 .error404 {}                      /* 404 page */
 
 .single { 											/* single post page */
-	.meta {
-		float: right;
-		width: 250px;
-	}
-	
 	.excerpt {
-		p {
-			color: lighten(@black, 35%);
-			margin: 0;
-			padding: 0 0 1.5em;
-		}
+		display: none;
 	}	
+	.by-line {
+		margin: 0 0 0.5em;
+	}
 	.post {
 		margin: 0 auto;
 		border: none;
-	}
-
-	.post-content {
-		p {
-			padding-right: 240px;
-			width: 600px;
-		}
 	}
 }                        
 
@@ -179,6 +166,7 @@ h1, .h1 {
 
 h2, .h2 {
 	font-size: 1.75em;
+	font-size: 1.5em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
 }
@@ -215,36 +203,33 @@ HEADER SYTLES
 	background-color: @green;
 	// h2 site description
 	h2.ppc-description {
-		font-family: Georgia, serif;
-		font-size: 0.8em;
-		font-weight: normal;
-		line-height: 1.2em;
-		margin: 4.667em 0 0;
-		color: @black;
+		display: none;
 	}
 
 	#searchform {
-		float: right;
 		font-size: .8em;
-		margin-top: 4.267em;
+		margin: 0 0 1em;
+	}
+	/* search input */
+	input {
+		width: 100%;
 	}
 	.menu {
-		float:right;
 		font-size: 1em;
 		ul {
-			margin: 1.667em 0 0;
+			margin: 0 0 0.5em;
 		}
 		li {
 			font-family: "ConstructivistSquare", Georgia, serif;
 			display: inline-block;
-			margin-right: 1em;
+			margin: 0 1em 0 0;
 		}
 	}
 }
 
 #logo {
-	margin: 0 0 .130em;
-	//line-height: 1.143em;
+	font-size: 1.875em;
+	margin: 0.5em 0 0.130em;
 }
 
 /*********************
@@ -260,17 +245,12 @@ and moe scalable.
 */
 
 .nav {
-	//border: 1px solid #ccc;
-	//border-bottom: 0;
 
 	li {
 
 		a {
 			display: block;
 			text-decoration: none;
-			//padding: 10px 10px;
-			//background-color: #eee;
-			//border-bottom: 1px solid #ccc;
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -333,7 +313,9 @@ and moe scalable.
 .footer-nav {
 	margin: 0;
 	.menu-item {
-		margin: 0.5em 1.625em;
+		margin: 1em 0;
+		width: 33%;
+		float:left;
 		a {
 			height: 48px;
 			overflow: hidden;
@@ -368,254 +350,271 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	min-height: 470px;
-	margin-top: 3em;
+	margin-top: 1.375em;
+	min-height: 23.125em; // 370px@fs16
 }
 		
-		.hentry {
+.hentry {
 
-			header {}
+	header {}
 
-			footer {
-				margin-bottom: 3em;
-				.tags {
-					font-size: 0.75em;
-					line-height: 1.438em;
-					margin: 0;
-				}
-			}
-
-		} /* end .hentry */
-
-		#main {
-			margin-bottom: 3em;
+	footer {
+		margin-bottom: 3em;
+		.tags {
+			font-size: 0.75em;
+			line-height: 1.438em;
+			margin: 0;
 		}
+	}
 
-		.single-title,
-		.page-title {}
+} /* end .hentry */
 
-		.single-title {}
+#main {
+	margin-bottom: 3em;
+}
 
-		.page-title {}
+.single-title,
+.page-title {}
 
-		.archive-title {
-			border-bottom: 1px solid @black;
+.single-title {}
+
+.page-title {}
+
+.archive-title {
+	border-bottom: 1px solid @black;
+}
+
+/* want to style individual post classes? Booya! */
+.post-id {} /* post by id (i.e. post-3) */
+.post {
+	border-bottom: 1px solid @black;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+} /* general post style */
+.page {} /* general article on a page style */
+.attachment {} /* general style on an attatchment */
+.sticky {} /* sticky post style */
+.hentry {} /* hentry class */
+.category-slug {} /* style by category (i.e. category-videos) */
+.tag-slug {} /* style by tag (i.e. tag-news) */
+
+/* post meta */
+.meta {
+	color: @grey;
+
+	time {}
+}
+
+/* post content */
+.post-content {
+
+	ul, ol, table, dl {}
+
+	ul, ol {
+
+		li {}
+
+	}
+
+	ul {
+
+		li {}
+
+	}
+
+	ol {
+
+		li {}
+
+	}
+
+	blockquote {
+
+		&:before {}
+
+	}
+
+	dl {}
+
+	dt {}
+
+	dd {
+		margin-left: 0;
+		font-size: 0.9em;
+		color: #787878;
+		margin-bottom: 1.5em;
+	}
+
+	img {
+		margin: 0 0 1em 0;
+		max-width: 100%;
+		height: auto;
+	}
+
+	/*
+	image alignment on a screen this size may be
+	a bit difficult. It's set to start aligning
+	and floating images at the next breakpoint,
+	but it's up to you. Feel free to change it up.
+	*/
+	.alignleft, img.alignleft {}
+	.alignright, img.alignright {}
+	.aligncenter, img.aligncenter {}
+
+	video, object {
+		max-width: 100%;
+		height: auto;
+	}
+
+	pre, code {
+		font-size: 0.875em;
+	}
+
+} /* end .post-content */
+
+.wp-caption {
+	background: #eee;
+	padding: 5px;
+
+	/* images inside wp-caption */
+	img {
+		margin-bottom: 0;
+		width: 100%;
+	}
+
+	p.wp-caption-text {
+		font-size: 0.85em;
+		margin: 4px 0 7px;
+		text-align: center;
+	}
+
+} /* end .wp-caption */
+
+/* image gallery styles */
+.gallery {
+
+	dl {
+
+		a {}
+
+		img {}
+
+	}
+
+	dt {}
+
+	dd {}
+
+} /* end .gallery */
+
+/* gallery caption styles */
+.gallery-caption {}
+
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
+
+// homepage only
+.train-board {
+	overflow: hidden;
+	position: relative;
+	.float-link {
+		position: absolute;
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+	}
+
+	.train-board-title {
+		position: relative;
+		margin-left: 3px;
+		margin-right: 3px;
+	}
+
+	.post-content {
+		position: relative;
+	}
+
+	.excerpt {
+		font-size: 0.75em; // 12px@body16 / 13px@body18
+		display: table;
+		height: 100%;
+		float: left;
+		margin-left: 1%;
+		width: 74%;
+		p {
+			display: table-cell;
+			vertical-align: middle;
 		}
-
-		/* want to style individual post classes? Booya! */
-		.post-id {} /* post by id (i.e. post-3) */
-		.post {
-			width: 600px;
-			border-bottom: 1px solid @black;
-		} /* general post style */
-		.page {} /* general article on a page style */
-		.attachment {} /* general style on an attatchment */
-		.sticky {} /* sticky post style */
-		.hentry {} /* hentry class */
-		.category-slug {} /* style by category (i.e. category-videos) */
-		.tag-slug {} /* style by tag (i.e. tag-news) */
-
-		/* post meta */
-		.meta {
-			color: @grey;
-
-			time {}
+	}
+	.meta {
+		display: table;
+		font-size: 0.889em; //16px@body18
+		height: 100%;
+		text-align: right;
+		float: left;
+		margin-right: 1%;
+		width: 24%;
+		p {
+			display: table-cell;
+			vertical-align: middle;
 		}
+	}
+} /* end .train-board */
 
-		/* post content */
-		.post-content {
-
-			ul, ol, table, dl {}
-
-			ul, ol {
-
-				li {}
-
-			}
-
-			ul {
-
-				li {}
-
-			}
-
-			ol {
-
-				li {}
-
-			}
-
-			blockquote {
-
-				&:before {}
-
-			}
-
-			dl {}
-
-			dt {}
-
-			dd {
-				margin-left: 0;
-				font-size: 0.9em;
-				color: #787878;
-				margin-bottom: 1.5em;
-			}
-
-			img {
-				margin: 0 0 1em 0;
-				max-width: 100%;
-				height: auto;
-			}
-
-			/*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/
-			.alignleft, img.alignleft {}
-			.alignright, img.alignright {}
-			.aligncenter, img.aligncenter {}
-
-			video, object {
-				max-width: 100%;
-				height: auto;
-			}
-
-			pre, code {
-				font-size: 0.875em;
-			}
-
-		} /* end .post-content */
-
-		.wp-caption {
-			background: #eee;
-			padding: 5px;
-
-			/* images inside wp-caption */
-			img {
-				margin-bottom: 0;
-				width: 100%;
-			}
-
-			p.wp-caption-text {
-				font-size: 0.85em;
-				margin: 4px 0 7px;
-				text-align: center;
-			}
-
-		} /* end .wp-caption */
-
-		/* image gallery styles */
-		.gallery {
-
-			dl {
-
-				a {}
-
-				img {}
-
-			}
-
-			dt {}
-
-			dd {}
-
-		} /* end .gallery */
-
-		/* gallery caption styles */
-		.gallery-caption {}
-
-		.size-full {}
-		.size-large {}
-		.size-medium {}
-		.size-thumbnail {}
-
-		// homepage only
-		.train-board {
-			overflow: hidden;
-			position: relative;
-			.float-link {
-				position: absolute;
-				display: inline-block;
-				height: 100%;
-				width: 100%;
-				z-index: 1;
-			}
-
-			.train-board-title {
-				position: relative;
-				margin-left: 3px;
-				margin-right: 3px;
-			}
-
-			.post-content {
-				position: relative;
-			}
-
-			.excerpt {
-				font-size: .75em;
-				display: table;
-				height: 100%;
-				margin-left: 3px;
-				width: 450px;
-				p {
-					display: table-cell;
-					vertical-align: middle;
-				}
-			}
-			.meta {
-				display: table;
-				float: right;
-				font-size: 0.889em;
-				height: 100%;
-				margin-right: 3px;
-				text-align: right;
-				width: 100px;
-				p {
-					display: table-cell;
-					vertical-align: middle;
-				}
-			}
+// archive posts only
+.archive-post {
+	.h2 { // .sixcol.first
+		display: inline-block;
+		float: left;
+		font-size: 1.25em; // 20px@fs16
+		width: 15.9em; // 318px@fs20
+	}
+	.post-content { // .fourcol
+		color: lighten(@black, 35%);
+		display: none;
+		font-size: 0.833em;
+		p {
+			margin: 2.133em 0 0.8em;
 		}
+	}
+	.meta { // .twocol.last
+		font-size: 0.833em; // 13px@fs16 14px@fs18
+		text-align: right;
+		display: inline-block;
+		float: left;
+		margin: 1em 0 0.5em;
+		width: 7.5em; // 100px@fs13
+		p {
+			margin: 0.250em 0;
+		}
+	}
+	.article-footer {
+		margin-bottom: 0;
+	}
+} /* end .archive-post */
 
-		// archive posts only
-		.archive-post {
-			.post-content {
-				color: lighten(@black, 35%);
-				font-size: 0.833em;
-				p {
-					margin: 2.133em 0 0.8em;
-				}
-			}
-			.meta {
-				font-size: 0.833em;
-				text-align: right;
-				margin: 2.133em 0 0.8em;
-				p {
-					margin: 0.250em 0;
-				}
-			}
-		}
-
-		// author page profile
-		.ppc-profile {
-			margin-bottom: 1em;
-		}
-		.ppc-social {
-			font-size: 0.889em;
-			margin: 0 1em 0 0;
-			float: right;
-			span {text-align: right;}
-			a { 
-				text-decoration: none;
-				margin-left: 1em;
-			}
-		}
-		.avatar {
-			text-align: right;
-		}
+// author page profile
+.ppc-profile {
+	margin-bottom: 1em;
+}
+.ppc-social {
+	font-size: 0.889em;
+	margin: 0 1em 0 0;
+	float: right;
+	span {text-align: right;}
+	a { 
+		text-decoration: none;
+		margin-left: 1em;
+	}
+}
+.avatar {
+	text-align: center;
+}
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -758,7 +757,6 @@ COMMENT STYLES
 
 .commentlist {
 
-	width: 800px;
 	font-size: 0.75em;
 
 	li {
@@ -927,11 +925,10 @@ COMMENT FORM STYLES
 ******************************************************************/
 
 .respond-form {
-	margin: 1.5em 0;
-	width: 800px;
+	margin: 1.5em 0 0;
 
 	form {
-		margin: 0.75em 0;
+		margin: 0.75em 0 0;
 
 		#comment-form-elements {
 			.author, .email {
@@ -977,45 +974,51 @@ COMMENT FORM STYLES
 		}
 
 		input[type=text],
-		input[type=email],
-		input[type=url] {
+		input[type=email] {
 			width: 100%;
+		}
+
+		input[type=url] {
+			width: 96%;
 		}
 
 		textarea {
 			resize: none;
-			width: 100%;
-			height: 150px;
+			width: 96%;
+			height: 8.333em;
 		}
 
 	}
 }
 
-	/* comment submit button */
-	#submit {}
+/* comment submit button */
+.submit-button {
+	margin: 1em 0 0;
+}
+#submit {}
 
-	/* comment form title */
-	#comment-form-title {
-		margin: 0 0 1.1em;
-	}
+/* comment form title */
+#comment-form-title {
+	margin: 0 0 1.1em;
+}
 
-	/* cancel comment reply link */
-	#cancel-comment-reply {
-		a {}
-	}
+/* cancel comment reply link */
+#cancel-comment-reply {
+	a {}
+}
 
-	/* logged in comments */
-	.comments-logged-in-as {}
+/* logged in comments */
+.comments-logged-in-as {}
 
-	/* allowed tags */
-	#allowed_tags {
-		margin: 1.5em 10px 0.7335em 0;
-	}
+/* allowed tags */
+#allowed_tags {
+	margin: 1.5em 10px 0.7335em 0;
+}
 
-	/* no comments */
-	.nocomments {
-		margin: 0 20px 1.1em;
-	}
+/* no comments */
+.nocomments {
+	margin: 0 20px 1.1em;
+}
 
 /*********************
 SIDEBARS & ASIDES
@@ -1051,7 +1054,7 @@ CATEGORY LIST STYLES
 *********************/
 
 .categories-list {
-	margin-bottom: 1em;
+	margin: 2em 0 1em;
 	.h3 {
 		border-bottom: 1px solid @black;
 		margin: 0 0 1em;
@@ -1063,17 +1066,9 @@ CATEGORY LIST STYLES
 .category_image {
 	display: inline-block;
 	margin: 0 0 1em 0;
-	width: 175px;
-	//min-height: 80px;
+	width: 8.5em; // 136px + &nbsp; = 480/3;
 	vertical-align: top;
 	a {display: block;}
-	/*
-	.link_image {
-		float: left;
-		height: 80px;
-		//img { margin-top: -15px;}
-	}
-	*/
 	p {
 		font-size: 0.75em;
 		margin: 0 0.214em;
@@ -1084,7 +1079,6 @@ CATEGORY LIST STYLES
 	font-family: "ConstructivistSquare", Georgia, serif;
 	text-decoration: none;
 	margin: 0.167em;
-	//margin-top: 0;
 }
 
 /*********************
@@ -1114,14 +1108,12 @@ FOOTER STYLES
 *********************/
 
 .footer {
-	background: @green;
+	background: @light-grey;
 	clear: both;
 	nav {
-		display: inline-block;
-		float: left;
-		width: 380px;
 	}
 	.footer-nav-pages {
+		font-size: 1.313em;
 		.h3 {
 			font-size: 1.438em;
 			margin-bottom: 0;
@@ -1144,16 +1136,11 @@ FOOTER STYLES
 		}
 	}
 
-	.footer-nav-social {
-		border-left: 1px solid @black;
-		border-right: 1px solid @black;
-		text-align: center;
-		margin: 1em 1em 0;
-		width: 330px;
-	}
+	.footer-nav-social {}
 
 	.footer-nav-cats {
 		.category-menu {
+			overflow: hidden; /* for floats to take space */
 			li {
 				display: inline-block;
 				float: left;
