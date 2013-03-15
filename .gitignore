@@ -13,3 +13,5 @@ database/
 # category-images-ii git can't access it
 wordpress/wp-config.php
 wordpress/wp-content/uploads/
+
+.htaccess
