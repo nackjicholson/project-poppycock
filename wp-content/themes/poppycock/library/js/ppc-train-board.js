@@ -1,6 +1,6 @@
 (function($) {
 	// as the page loads, call these scripts
-	$(window).bind("load", function() {
+	$(function() {
 
 		// constructor function
 		var BoardController = function(options) {
@@ -24,6 +24,7 @@
 
 			// Listener for window resize.
 			$(window).resize($.proxy(this.setHeight, this));
+			$(window).bind("load", $.proxy(this.setHeight, this));
 
 			this.setHeight();
 		};
