@@ -1,4 +1,7 @@
+# server garbage.
 error_log
+.ftpquota
+
 #vim
 *.swp
 .*.swp
