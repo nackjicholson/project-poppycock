@@ -1,6 +1,6 @@
 (function($) {
 	// as the page loads, call these scripts
-	$(document).ready(function($) {
+	$(window).bind("load", function() {
 
 		// constructor function
 		var BoardController = function(options) {
@@ -11,7 +11,7 @@
 			// The h1 element
 			this.$title = this.$el.find('.train-board-title').first();
 			// The section element
-			this.$section = this.$el.find('.post-content').first();
+			this.$section = this.$el.find('.train-board-content').first();
 
 			// Listeners
 			this.$el.bind('mouseenter', $.proxy(this.over, this));
@@ -33,6 +33,7 @@
 			setHeight: function() {
 				// What is the proper height?
 				var boardheight = this.$title.outerHeight(true);
+				console.log(boardheight);
 				this.boardheight = boardheight;
 
 				// Set things to their proper height.

@@ -23,7 +23,7 @@
 
 								    <h1 class="h2 train-board-title"><?php the_title(); ?></h1>
 
-								    <section class="post-content clearfix">
+								    <section class="post-content clearfix train-board-content">
 									    <div class="excerpt"><?php the_excerpt(); ?></div>
 									    <div class="meta">
 									    	<p>
