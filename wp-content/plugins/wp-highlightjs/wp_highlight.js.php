@@ -1,31 +1,14 @@
 <?php
 /*
 Plugin Name: wp-highlight.js
-Plugin URI: http://www.kalnitsky.org/projects/wp-highlight.js/
+Plugin URI: http://kalnitsky.org/projects/wp-highlight.js/
 Description: This is simple wordpress plugin for <a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a> library. Highlight.js highlights syntax in code examples on blogs, forums and in fact on any web pages. It&acute;s very easy to use because it works automatically: finds blocks of code, detects a language, highlights it.
-Version: 0.2.3
+Version: 0.3
 Author: Igor Kalnitsky
-Author URI: http://www.kalnitsky.org/
-License: GPL3
+Author URI: http://kalnitsky.org/
+License: 3-clause BSD
 */
 
-/*
-  Copyright 2011 Igor Kalnitsky <igor@kalnitsky.org>
-
-  This program is free software; you can redistribute it and/or modify 
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation; either version 2 of the License, or
-  (at your option) any later version.
-
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License 
-  along with this program; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
 
 $PLUGIN_DIR =  plugins_url() . '/' . dirname(plugin_basename(__FILE__));
 
@@ -78,8 +61,7 @@ add_action('wp_head', 'hljs_include');
 
 function init_hljs_textdomain() {
     if (function_exists('load_plugin_textdomain')) {
-        global $PLUGIN_DIR;
-        load_plugin_textdomain('hljs', false, dirname(plugin_basename (__FILE__)));
+        load_plugin_textdomain( 'hljs', false, dirname( plugin_basename( __FILE__ ) ) );
     }
 }
 
@@ -147,9 +129,8 @@ add_shortcode('code', 'hljs_code_handler');
 
 function hljs_settings_page() {
     global $PLUGIN_DIR;
-    $cmd = $_POST['cmd'];
 
-    if ($cmd == "hljs_save")
+    if ( isset( $_POST['cmd'] ) && $_POST['cmd'] == "hljs_save" )
     {
         update_option('hljs_style', $_POST['hljs_style']);
         update_option('hljs_tab_replace', $_POST['hljs_tab_replace']);
@@ -164,7 +145,7 @@ function hljs_settings_page() {
 
     <div class="wrap">
 
-      <form id="hljs" method="post" action="<? echo $_SERVER['REQUEST_URI'];?>">
+      <form id="hljs" method="post" action="<?php echo $_SERVER['REQUEST_URI'];?>">
 
         <script type="text/javascript" src="<?php echo ($PLUGIN_DIR . '/' . 'highlight.pack.js'); ?>"></script>
         <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
@@ -216,7 +197,7 @@ function hljs_settings_page() {
             <table border="0" class="hljs_copyright">
                 <tr>
                     <td width="120px" align="center"><?php echo __('Author', 'hljs'); ?></td>
-                    <td><p><a href="http://www.kalnitsky.org"><?php echo __('Igor Kalnitsky', 'hljs'); ?></a> &lt;<a href="mailto:igor@kalnitsky.org">igor@kalnitsky.org</a>&gt;</p></td>
+                    <td><p><a href="http://kalnitsky.org"><?php echo __('Igor Kalnitsky', 'hljs'); ?></a> &lt;<a href="mailto:igor@kalnitsky.org">igor@kalnitsky.org</a>&gt;</p></td>
                 </tr>
 
                 <tr>
@@ -242,12 +223,13 @@ function hljs_settings_page() {
                 <tr>
                     <td width="120px" align="center"><?php echo __('Language Support', 'hljs'); ?></td>
                     <td><p>
-                        1C, ActionScript, Apache, AVR Asm, Axapta, Bash, CMake, CoffeeScript C++, C#,
-                        CSS, D, Delphi, Diff, Django, Dos, Erlang, Erlang REPL, Go, GLSL, Haskell,
-                        HTTP, Ini, Java, JavaScript, JSON, Lisp, Lua, Markdown, MatLab, MEL, Nginx,
-                        Objective C, Parser3, Perl, PHP, Python profile, Python, R, RenderMan RSL,
-                        RenderMan RIB, Ruby, Rust, Scala, Smalltalk, SQL, TeX, Vala, VBscript, VHDL,
-                        HTML/XML, HTTP
+                        1C, ActionScript, Apache, AppleScript, ASCII Doc, AVR Asm, Axapta, Bash,
+                        Brainfuck, Clojure, CMake, CoffeeScript, C++, C#, CSS, Delphi, Diff, Django,
+                        D, Dos, Erlang, Erlang REPL, F#, GLSL, Go, HAML, Haskell, HTTP, Ini, Java,
+                        JavaScript, JSON, Lasso, Lisp, Lua, Markdown, MatLab, MEL, Nginx, Objective C,
+                        Parser3, Perl, PHP, Python profile, Python, R, RenderMan RSL, RenderMan RIB,
+                        Ruby, Rules, Rust, Scala, SCSS, Smalltalk, SQL, TeX, Vala, VisualBasic.NET,
+                        VBscript, VHDL, HTML/XML
                         </p>
                     </td>
                 </tr>
@@ -262,3 +244,4 @@ function hljs_settings_page() {
     <?php
 }
 ?>
+
