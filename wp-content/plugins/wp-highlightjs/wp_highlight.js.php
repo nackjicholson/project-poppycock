@@ -244,4 +244,3 @@ function hljs_settings_page() {
     <?php
 }
 ?>
-
